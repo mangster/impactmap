@@ -26,6 +26,7 @@ Template.edit.helpers({
 
 
 Template.edit.onRendered(function () {
+	//TODO sätt id till id, för att komma åt collection item för att ändra ordning permanent
 	var panelList = $('#draggablePanelList');
 	panelList.sortable({
             // Only make the .panel-heading child elements support dragging.
@@ -33,10 +34,14 @@ Template.edit.onRendered(function () {
             handle: '.panel-heading', 
             update: function() {
                 $('.panel', panelList).each(function(index, elem) {
+					
                      var $listItem = $(elem),
                          newIndex = $listItem.index();
 
                      // Persist the new indices.
+					 console.log(this.id);
+					 console.log(newIndex);
+					 Whos.update({_id: this.id}, {$set: {rank: newIndex}});
                 });
             }
 	});

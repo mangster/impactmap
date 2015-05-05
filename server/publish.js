@@ -28,7 +28,7 @@ Meteor.publish("whos", function () {
     return Whos.find();
 });
 
-  
+
 /*
 // Publish all nodes for a given map
 Meteor.publish("mapNodes", function (impactMapId) {
