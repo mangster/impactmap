@@ -1,0 +1,34 @@
+<template name="edit">
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<button type="submit" class="btn btn-default goBack" href="#">Close</button><h1>{{name}}</h1> 
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<ul id="draggablePanelList" class="list-unstyled">
+					{{#each whos}}
+							{{>who}}
+					{{/each}}
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4>Create new Who</h4>
+					<form class="form-inline" id="createWho">
+						<div class="form-group">
+							<label class="sr-only" for="whoName">Who Name</label>
+							<input type="text" class="form-control" id="whoName" placeholder="Who name">
+						</div>
+						<button type="submit" class="btn btn-primary">Create</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>		
+</template>

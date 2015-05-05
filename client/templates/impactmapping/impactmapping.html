@@ -1,0 +1,51 @@
+<template name="impactMapping">
+	<div class="container">
+		<div class="page-header">
+			<h1>Impact Mapping</h1>
+		</div>	
+		
+		<div class="row">
+			<div class="col-md-12">	
+				<h4>Existing impact maps</h4>
+				<table class="table table-striped table-condensed table-hover table-bordered">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each impactMaps}}
+						<tr>
+							<td>{{name}}</td>
+							<td>
+								<button type="submit" class="btn btn-success editImpactMap" href="#">Edit</button>
+								<button type="submit" class="btn btn-danger deleteImpactMap" href="#">Delete</button>
+							</td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				
+				<h4>Create new impact map</h4>
+				<form class="form-inline" id="createImpactMap">
+					<div class="form-group">
+						<label class="sr-only" for="impactMapName">Impact Map Name</label>
+						<input type="text" class="form-control" id="impactMapName" placeholder="Impact map name">
+					</div>
+					<button type="submit" class="btn btn-primary">Create</button>
+				</form>
+			</div>
+		</div>	
+		
+
+
+		
+	</div>
+</template>
+

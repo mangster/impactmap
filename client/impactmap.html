@@ -1,0 +1,27 @@
+<head>
+	<title>impactmap</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<template name="main">
+		{{> navbar }}
+		{{#if currentUser}}
+			{{> yield}}
+		{{else}}
+			{{> loggedOut}}
+		{{/if}}
+</template>
+
+<template name="home">
+	<div class="container">
+		<h1>Startpage</h1>
+		<p>Information and whatnot</p>
+	</div>
+</template>
+
+<template name="loggedOut">
+	<div class="container">
+		<p>Dude you're like totally not logged in</p>
+	</div>
+</template>
