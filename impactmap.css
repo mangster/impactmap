@@ -1,3 +1,7 @@
- #draggablePanelList .panel-heading {
+ #whoList .panel-heading {
+        cursor: move;
+    }
+	
+ #whyList .panel-heading {
         cursor: move;
     }

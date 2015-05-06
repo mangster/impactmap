@@ -28,6 +28,10 @@ Meteor.publish("whos", function () {
     return Whos.find();
 });
 
+Meteor.publish("whys", function () {
+    return Whys.find();
+});
+
 
 /*
 // Publish all nodes for a given map
