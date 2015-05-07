@@ -32,6 +32,14 @@ Meteor.publish("whys", function () {
     return Whys.find();
 });
 
+Meteor.publish("whats", function () {
+    return Whats.find();
+});
+
+Meteor.publish("hows", function () {
+    return Hows.find();
+});
+
 
 /*
 // Publish all nodes for a given map

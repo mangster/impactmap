@@ -1,9 +1,22 @@
 <template name="who">
 	<li class="panel panel-info" id="{{_id}}">
-		<div class="panel-heading" id="{{_id}}">{{name}}</div>
+		<div class="panel-heading panel-heading-who" id="{{_id}}">{{rank}} {{name}}</div>
 		<div class="panel-body">
-			<p>{{rank}} </p>
-			<button type="submit" class="btn btn-danger deleteWho pull-right btn-sm" href="#">Delete</button>			
+			<h3>What</h3>
+			<ul id="whatList{{_id}}" class="list-unstyled">
+			{{#each whats}}
+					{{>what}}
+			{{/each}}
+			</ul>
+			<form class="form-inline" id="createWhat">
+				<div class="form-group">
+					<label class="sr-only" for="whatName">What Name</label>
+					<input type="text" class="form-control" id="whatName{{_id}}" placeholder="What name">
+				</div>
+				<button type="submit" class="btn btn-primary">Create</button>
+				<button type="submit" class="btn btn-danger deleteWho pull-right" href="#">Delete Who</button>	
+			</form>
+					
 		</div>
 	</li>
 </template>

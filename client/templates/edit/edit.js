@@ -10,7 +10,6 @@ Template.edit.events({
         e.preventDefault();
         var name = document.getElementById("whyName").value;
 		var impactMapId = this._id;
-		//console.log(this._id);
 		Whys.insert({impactMap: impactMapId, name: name, rank:1})
 		return false;
     },
@@ -28,7 +27,6 @@ Template.edit.helpers({
 	},
 	whos: function(){
 		return Whos.find({impactMap: this._id}, {sort: {rank: 1} });
-		//return Whos.find({_id: this._id}, { sort: { name: 1 }});
 	},
 	whys: function(){
 		return Whys.find({impactMap: this._id}, {sort: {rank: 1} });
@@ -42,7 +40,7 @@ Template.edit.onRendered(function () {
 	whoList.sortable({
             // Only make the .panel-heading child elements support dragging.
             // Omit this to make then entire <li>...</li> draggable.
-            handle: '.panel-heading', 
+            handle: '.panel-heading-who', 
 			
             update: function() {
                 $('.panel', whoList).each(function(index, elem) {
@@ -56,7 +54,7 @@ Template.edit.onRendered(function () {
 	whyList.sortable({
             // Only make the .panel-heading child elements support dragging.
             // Omit this to make then entire <li>...</li> draggable.
-            handle: '.panel-heading', 
+            handle: '.panel-heading-why', 
 			
             update: function() {
                 $('.panel', whyList).each(function(index, elem) {

@@ -5,3 +5,11 @@
  #whyList .panel-heading {
         cursor: move;
     }
+	
+ #whatList .panel-heading {
+	cursor: move;
+}
+
+ #howList .panel-heading {
+        cursor: move;
+    }
