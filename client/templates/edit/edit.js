@@ -54,7 +54,7 @@ Template.edit.onRendered(function () {
 	whyList.sortable({
             // Only make the .panel-heading child elements support dragging.
             // Omit this to make then entire <li>...</li> draggable.
-            handle: '.panel-heading-why', 
+            handle: '.moveWhy', 
 			
             update: function() {
                 $('.panel', whyList).each(function(index, elem) {
@@ -65,4 +65,19 @@ Template.edit.onRendered(function () {
                 });
             }
 	});
+	
+	$("#whyList").on("mouseenter", "li", function(){						
+        $(this).find('.myhover').fadeIn(400);
+    }).on("mouseleave", "li", function(){	
+        $(this).find('.myhover').stop().fadeOut(100);
+    });
+});
+
+
+$(document).ready(function(){
+    $("#whyList").on("mouseenter", "li", function(){						
+        $(this).find('.myhover').fadeIn(400);
+    }).on("mouseleave", "li", function(){	
+        $(this).find('.myhover').stop().fadeOut(100);
+    })	
 });

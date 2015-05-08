@@ -1,3 +1,8 @@
+ #whyList > li{
+    position: relative;
+
+}
+ 
  #whoList .panel-heading {
         cursor: move;
     }
@@ -13,3 +18,52 @@
  #howList .panel-heading {
         cursor: move;
     }
+
+
+
+.tool {
+	color: #cccccc;
+	text-align: center; 
+	display: inline-block;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 1em;
+	margin-right: 1em;
+
+
+}
+
+
+
+
+.tool a:link{
+	color: #cccccc;
+	text-decoration: none;
+}
+.myhover a:visited{
+	color: #cccccc;
+	text-decoration: none;
+}
+.myhover a:hover{
+	color: #ffffff;
+	text-decoration: none;
+}
+.myhover a:active{
+	color: #cccccc;
+	text-decoration: none;
+}
+
+	
+
+.myhover{
+    background-color: rgba(50,50,50,1);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    display: none;
+	text-align: center;
+}

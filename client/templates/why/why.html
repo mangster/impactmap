@@ -2,8 +2,20 @@
 	<li class="panel panel-info" id="{{_id}}">
 		<div class="panel-heading panel-heading-why" id="{{_id}}">{{name}}</div>
 		<div class="panel-body">
-			<p>{{rank}} </p>
-			<button type="submit" class="btn btn-danger deleteWhy pull-right btn-sm" href="#">Delete</button>			
+			<p>{{rank}} </p>	
 		</div>
+		<div class="myhover" style="display: none; opacity: 0.5;">	 
+			<a href="#" class="tool">
+				<h1><span class="glyphicon glyphicon-move moveWhy" style="display: block"></span></h1>
+			</a>
+			
+			<a href="#" class="tool">
+				<h1><span class="glyphicon glyphicon-edit editWhy" style="display: block"></span></h1>
+			</a>
+			<a href="#" class="tool">
+				<h1><span class="glyphicon glyphicon-remove deleteWhy" style="display: block"></span></h1>
+			</a>
+
+        </div>
 	</li>
 </template>

@@ -1,9 +1,17 @@
 <template name="how">
+	<li id="{{_id}}">
+		<p>{{rank}} {{name}}  
+			<a href="#" class="icon">
+				<span class="glyphicon glyphicon-remove deleteHow"></span>
+			</a>
+		</p>
+	</li>
+	<!--
 	<li class="panel panel-info" id="{{_id}}">
 		<div class="panel-heading panel-heading-how" id="{{_id}}">{{name}}</div>
 		<div class="panel-body">
 			<p>{{rank}} </p>
 			<button type="submit" class="btn btn-danger deleteHow pull-right btn-sm" href="#">Delete</button>			
 		</div>
-	</li>
+	</li> -->
 </template>
