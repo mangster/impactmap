@@ -11,12 +11,15 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h2>Why</h2>
-					<ul id="whyList" class="list-unstyled">
+					
+				</div>
+				<ul id="whyList" class="list-unstyled">
 					{{#each whys}}
-							{{>why}}
+							<div class="col-lg-3 col-md-4">
+								{{>why}}
+							</div>
 					{{/each}}
 					</ul>
-				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">

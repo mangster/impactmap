@@ -1,21 +1,31 @@
 <template name="why">
-	<li class="panel panel-info" id="{{_id}}">
-		<div class="panel-heading panel-heading-why" id="{{_id}}">{{name}}</div>
-		<div class="panel-body">
-			<p>{{rank}} </p>	
-		</div>
-		<div class="myhover" style="display: none; opacity: 0.5;">	 
-			<a href="#" class="tool">
-				<h1><span class="glyphicon glyphicon-move moveWhy" style="display: block"></span></h1>
-			</a>
-			
-			<a href="#" class="tool">
-				<h1><span class="glyphicon glyphicon-edit editWhy" style="display: block"></span></h1>
-			</a>
-			<a href="#" class="tool">
-				<h1><span class="glyphicon glyphicon-remove deleteWhy" style="display: block"></span></h1>
-			</a>
 
-        </div>
+	<li id="{{_id}}">
+		<div class="why">
+			<div class="why-heading" id="{{_id}}">
+				<h4>{{rank}} {{name}}</h4>
+			</div>
+			<div class="why-body">
+				<p>This is the text detailing wtf this is aboot which lorem lorem pizza bacon</p>	
+			</div>
+			
+			<div class="myhover" style="display: none; opacity: 0.5;">	 
+				<a href="#" class="tool">
+					<h1><span class="glyphicon glyphicon-move moveWhy" style="display: block"></span></h1>
+				</a>
+				
+				<a href="#" class="tool">
+					<h1><span class="glyphicon glyphicon-edit editWhy" style="display: block"></span></h1>
+				</a>
+				<a href="#" class="tool">
+					<h1><span class="glyphicon glyphicon-remove deleteWhy" style="display: block"></span></h1>
+				</a>
+
+			</div>
+		</div>
+		
+		
 	</li>
+
+
 </template>
