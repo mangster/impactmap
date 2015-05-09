@@ -1,23 +1,15 @@
  #whyList > li{
     position: relative;
-	
-}
 
-#whyList .why {
-	background-color: rgba(0,210,0,1);
 }
  
  #whoList .panel-heading {
         cursor: move;
     }
 	
- #whyList .why-heading {
-	background-color: rgba(0,240,0,1);
-}
-
- #whyList .why-body {
-	
-}
+ #whyList .panel-heading {
+        cursor: move;
+    }
 	
  #whatList .panel-heading {
 	cursor: move;
