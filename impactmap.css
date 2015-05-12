@@ -1,16 +1,31 @@
- #whyList > li{
-    position: relative;
-
+ #whyList {
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+	
 }
+
+#whyList > li{
+	margin: 3px 3px 3px 0; 
+	padding: 1px; 
+	float: left; 
+	width: 20%; 
+	height: 90px; 
+	font-size: 1em; 
+	position: relative;
+	
+}
+
+#whyList .panel-heading {
+        cursor: move;
+}
+	
  
  #whoList .panel-heading {
         cursor: move;
-    }
+}
 	
- #whyList .panel-heading {
-        cursor: move;
-    }
-	
+
  #whatList .panel-heading {
 	cursor: move;
 }

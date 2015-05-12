@@ -51,6 +51,8 @@ Template.edit.onRendered(function () {
                 });
             }
 	});
+	
+
 	whyList.sortable({
             // Only make the .panel-heading child elements support dragging.
             // Omit this to make then entire <li>...</li> draggable.
@@ -58,13 +60,15 @@ Template.edit.onRendered(function () {
 			
             update: function() {
                 $('.panel', whyList).each(function(index, elem) {
-					 var $listItem = $(elem),
-                     newIndex = $listItem.index();
+					 /*var $listItem = $(elem),
+                     newIndex = $listItem.index();*/
                      // Persist the new indices.
 					 Whys.update({_id: this.id}, {$set: {rank: index+1}});
                 });
             }
 	});
+	$( "#whyList" ).disableSelection();
+	
 	
 	$("#whyList").on("mouseenter", "li", function(){						
         $(this).find('.myhover').fadeIn(400);
@@ -73,11 +77,11 @@ Template.edit.onRendered(function () {
     });
 });
 
-
+/*
 $(document).ready(function(){
     $("#whyList").on("mouseenter", "li", function(){						
         $(this).find('.myhover').fadeIn(400);
     }).on("mouseleave", "li", function(){	
         $(this).find('.myhover').stop().fadeOut(100);
     })	
-});
+});*/
