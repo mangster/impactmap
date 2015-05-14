@@ -10,7 +10,7 @@
 			</a>
 			
 			<a href="#" class="tool">
-				<h1><span class="glyphicon glyphicon-edit editWhy" style="display: block"></span></h1>
+				<h1><span class="glyphicon glyphicon-edit editWhy" style="display: block" data-toggle="modal" data-target="#editWhy"></span></h1>
 			</a>
 			<a href="#" class="tool">
 				<h1><span class="glyphicon glyphicon-remove deleteWhy" style="display: block"></span></h1>
@@ -18,4 +18,26 @@
 
         </div>
 	</li>
+	
+	
+	<!-- Modal -->
+<div id="editWhy" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit impact goal: {{name}}</h4>
+      </div>
+      <div class="modal-body">
+        <p>This is where editing goes</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 </template>

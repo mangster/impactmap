@@ -7,10 +7,17 @@
 <template name="main">
 		{{> navbar }}
 		{{#if currentUser}}
-			{{> yield}}
+			<div class="container-fluid">
+				{{> yield}}
+			</div>
 		{{else}}
-			{{> loggedOut}}
+			<div class="container-fluid">
+				{{> loggedOut}}
+			</div>
 		{{/if}}
+		<footer class="footer">
+			{{> footer}}
+		</footer>
 </template>
 
 <template name="home">
