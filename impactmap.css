@@ -1,3 +1,18 @@
+
+/*
+h1 {
+    font-family: 'Allerta', Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    line-height: 55px;
+}
+ 
+p {
+    font-family: 'Crimson Text', Georgia, Times, serif;
+    font-size: 16px;
+    line-height: 25px;
+}
+*/
+
 /* button examples */
 .btn-green {
 	-webkit-border-radius: 0 !important;
@@ -97,33 +112,43 @@
 
 /* navbar */
 .navbar-default {
-    /*background-color: #98a665;*/
+	/*background-color: #8bc34a;*/
 	background-color: #8bc34a;
-    border-color: #E7E7E7;
+    border-color: #ffffff;
 	font-size: 1em;
-	
+
+
 	/*font-family: "Times New Roman", Georgia, Serif;*/
 }
 /* title */
 .navbar-default .navbar-brand {
-    color: #FEFEFE;
+    color: #ffffff;
 	
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-    color: #5E5E5E;
+    color: #689F38;
 }
 /* link */
 .navbar-default .navbar-nav > li > a {
-    color: #FEFEFE;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a  > i{
+
+    font-size: 1.8em;
 }
 .navbar-default .navbar-nav > li > a:hover{
-	color: #FEFEFE;
-	background-color: #689F38;
+	color: #ffffff;
+	background-color: #91CC4D;
 }
 .navbar-default .navbar-nav > li > a:focus {
-    color: #FEFEFE;
-	background-color: #689F38;
+    color: #20202f;
+	background-color: #ffffff;
+
+	
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
@@ -190,7 +215,7 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #f5f5f5;
+  background-color: #20202f;
 }
 
 

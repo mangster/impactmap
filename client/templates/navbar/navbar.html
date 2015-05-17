@@ -32,15 +32,15 @@
 
 
 <template name="navBrand">
-	<a class="navbar-brand" href="{{ pathFor 'home' }}"><span class="glyphicon glyphicon-globe"> </span>Impact Map</a>
+	<a class="navbar-brand" href="{{ pathFor 'home' }}">Impact Map</a>
 </template>
 
 <template name='navItems'>
 		<li class="{{ activeIfTemplateIs 'impactMapping' }}">
-			<a href="{{pathFor 'impactMapping'}}">Impact Mapping</a>
+			<a href="{{pathFor 'impactMapping'}}"><i class="glyphicon glyphicon-cloud"></i><br>Impact Mapping</a>
 		</li>
 		<li class="{{ activeIfTemplateIs 'projects' }}">
-			<a href="{{pathFor 'projects'}}">Projects</a>
+			<a href="{{pathFor 'projects'}}"><i class="glyphicon glyphicon-cloud"></i><br>Projects</a>
 		</li>
 </template>
 
