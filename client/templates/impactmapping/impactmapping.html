@@ -1,4 +1,21 @@
 <template name="impactMapping">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Ny effektkartelista</h2>
+			<ul id="impactMapList" class="list-unstyled">
+			{{#each impactMaps}}
+				<li>
+					<h4><i class="glyphicon glyphicon-cloud"></i>{{name}}</h4>
+					<p>Bacon ipsum dolor amet prosciutto flank pork chop hamburger. Spare ribs bacon capicola meatball, 
+						pig filet mignon meatloaf. Alcatra kevin kielbasa pork loin chicken landjaeger prosciutto. 
+						Turducken tongue ham hock, jowl shoulder kevin sirloin corned beef.
+					</p>	
+				</li>
+			{{/each}}
+			</ul>
+		</div>
+	</div>
+
 		<div class="page-header">
 			<h1>Impact Mapping</h1>
 		</div>	

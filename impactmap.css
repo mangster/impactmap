@@ -124,6 +124,7 @@ p {
 .navbar-default .navbar-brand {
     color: #ffffff;
 	
+	
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -137,8 +138,8 @@ p {
     color: #ffffff;
 }
 .navbar-default .navbar-nav > li > a  > i{
-
     font-size: 1.8em;
+	
 }
 .navbar-default .navbar-nav > li > a:hover{
 	color: #ffffff;
@@ -148,7 +149,6 @@ p {
     color: #20202f;
 	background-color: #ffffff;
 
-	
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
@@ -159,25 +159,47 @@ p {
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {
-    color: #555;
-    background-color: #D5D5D5;
+    color: #20202f;
+    background-color: #ffffff;
 }
 /* caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
-    border-top-color: #777;
-    border-bottom-color: #777;
+	
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
 }
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,
 .navbar-default .navbar-nav > .dropdown > a:focus .caret {
-    border-top-color: #333;
-    border-bottom-color: #333;
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
 }
-.navbar-default .navbar-nav > .open > a .caret, 
-.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a .caret{
+	border-top-color: #20202f;
+    border-bottom-color: #20202f;
+} 
+.navbar-default .navbar-nav > .open > a:hover .caret{
+	border-top-color: #20202f;
+    border-bottom-color: #20202f;
+} 
 .navbar-default .navbar-nav > .open > a:focus .caret {
-    border-top-color: #555;
-    border-bottom-color: #555;
+    border-top-color: #20202f;
+    border-bottom-color: #20202f;
 }
+
+.navbar-default .navbar-right > li > a {
+	height: 79px;
+	display: table-cell;
+	vertical-align: bottom;
+	
+
+}
+
+.navbar-default .navbar-right > i{
+	
+    font-size: 1.8em;
+	
+}
+
 /* mobile version */
 .navbar-default .navbar-toggle {
     border-color: #DDD;
@@ -218,7 +240,17 @@ body {
   background-color: #20202f;
 }
 
+#impactMapList > li{
+	padding: 8px;
+	margin-top: 16px;
+	background-color: #91CC4D;
+	color: #ffffff;
+	width: 50%; 
 
+	font-size: 1em; 
+
+	
+}
 
 #whyList {
 	list-style-type: none; 
@@ -239,6 +271,10 @@ body {
 }
 
 #whyList .panel-heading {
+        cursor: move;
+}
+
+#impactMapList {
         cursor: move;
 }
 	
