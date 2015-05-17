@@ -113,8 +113,8 @@ p {
 /* navbar */
 .navbar-default {
 	/*background-color: #8bc34a;*/
-	background-color: #20202f;
-    border-color: #8bc34a;
+	background-color: #8bc34a;
+    border-color: #ffffff;
 	font-size: 1em;
 
 
@@ -142,12 +142,12 @@ p {
 	
 }
 .navbar-default .navbar-nav > li > a:hover{
-	color: #8bc34a;
-
+	color: #ffffff;
+	background-color: #91CC4D;
 }
 .navbar-default .navbar-nav > li > a:focus {
     color: #20202f;
-	background-color: #8bc34a;
+	background-color: #ffffff;
 
 }
 .navbar-default .navbar-nav > .active > a, 
@@ -230,7 +230,6 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  background-color: #8bc34a;
 }
 .footer {
   position: fixed;
@@ -242,24 +241,16 @@ body {
 }
 
 #impactMapList > li{
-	
-	padding: 12px;
-	margin-top: 24px;
-	background-color: #ffffff;
-
+	padding: 8px;
+	margin-top: 16px;
+	background-color: #91CC4D;
+	color: #ffffff;
 	width: 50%; 
+
 	font-size: 1em; 
+
+	
 }
-
-
-
-#impactMapList > li > i{
-
-	float: left;
-
-}
-
-
 
 #whyList {
 	list-style-type: none; 
