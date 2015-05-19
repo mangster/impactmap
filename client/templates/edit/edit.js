@@ -70,7 +70,7 @@ Template.edit.onRendered(function () {
 	$( "#whyList" ).disableSelection();
 	
 	
-	$("#whyList").on("mouseenter", "li", function(){						
+	$("#wholist").on("mouseenter", "li", function(){						
         $(this).find('.myhover').fadeIn(400);
     }).on("mouseleave", "li", function(){	
         $(this).find('.myhover').stop().fadeOut(100);

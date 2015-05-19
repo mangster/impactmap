@@ -9,19 +9,26 @@
 
 
 <template name="main">
-		{{> navbar }}
-		{{#if currentUser}}
-			<div class="container-fluid">
-				{{> yield}}
-			</div>
-		{{else}}
-			<div class="container-fluid">
-				{{> loggedOut}}
-			</div>
-		{{/if}}
-		<footer class="footer">
-			{{> footer}}
-		</footer>
+	<div class="container-fluid">
+		<div class="row">
+			{{> navbar }}
+		</div>
+		<div class="row">
+			{{#if currentUser}}
+				
+					{{> yield}}
+				
+			{{else}}
+					{{> loggedOut}}
+				
+			{{/if}}
+		</div>
+		<div class="row">
+			<footer class="footer">
+				{{> footer}}
+			</footer>
+		</div>
+	</div>
 </template>
 
 <template name="home">

@@ -1,4 +1,36 @@
 <template name="what">
+	<div class="row">
+		<div class="col-md-6">
+			<li class="panel panel-what">
+				<div class="row">
+					<div class="panel-body">
+						<div class="col-xs-2">
+							<div class="what-icon">
+							<span class="glyphicon glyphicon-heart-empty"></span>
+							</div>
+						</div>
+						<div class="col-xs-10">
+							<h4>{{rank}} {{name}}</h4>
+							<p>Bacon ipsum dolor amet cow kielbasa bresaola, capicol
+							</p>
+						</div>
+					</div>
+				</div>
+				
+			</li>
+		</div>
+		<div class="col-md-6">
+			<ul class="list-unstyled">
+				{{#each hows}}
+					{{>how}}
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+
+
+
+	<!-- old WHAT
 	<li class="panel panel-info" id="{{_id}}">
 		<div class="panel-heading panel-heading-what" id="{{_id}}">{{rank}} {{name}}</div>
 		<div class="panel-body">
@@ -19,4 +51,5 @@
 				
 		</div>
 	</li>
+	-->
 </template>

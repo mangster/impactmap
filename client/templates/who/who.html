@@ -1,4 +1,54 @@
 <template name="who">
+	<div class="row">
+		<div class="col-md-4">
+			<li class="panel panel-who">
+				<div class="row">
+					<div class="panel-body">
+						<div class="col-xs-2">
+							<div class="who-icon">
+							<span class="glyphicon glyphicon-user"></span>
+							</div>
+						</div>
+						<div class="col-xs-10">
+							<h4>{{rank}} {{name}}</h4>
+							<p>Jobbar under stressiga omständigheter med en ofta hög ljudnivå. Ninjor och pirater är två stora problem i vardagen</p>
+							<p>Har god datorvana och förståelse för teknik, men en hög personalomsättning</p>
+						</div>
+					</div>
+					
+				</div>
+				<div class="myhover">
+					<div class="panel-body">
+						<div class="col-xs-11">
+						</div>
+						<div class="col-xs-1">
+							<a href="#" class="who-tool">
+								<span class="glyphicon glyphicon-remove deleteWho"></span>
+							</a>
+							<a href="#" class="who-tool">
+								<span class="glyphicon glyphicon-edit editWho" data-toggle="modal" data-target="#editWhy"></span>
+							</a>
+							<a href="#" class="who-tool">
+								<span class="glyphicon glyphicon-move moveWho"></span>
+							</a>
+							
+							
+						</div>
+					</div>
+					</div>
+			</li>
+		</div>
+		<div class="col-md-8">
+			<ul class="list-unstyled">
+				{{#each whats}}
+					{{>what}}
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+	
+
+	<!-- old WHO
 	<li class="panel panel-info" id="{{_id}}">
 		<div class="panel-heading panel-heading-who" id="{{_id}}">{{rank}} {{name}}</div>
 		<div class="panel-body">
@@ -19,4 +69,5 @@
 					
 		</div>
 	</li>
+	-->
 </template>

@@ -1,9 +1,31 @@
 <template name="edit">
-	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
 				<button type="submit" class="btn btn-default goBack" href="#">Close</button><h1>{{name}}</h1> 
 			</div>
+			
+			<div class="row">
+				<div class="col-md-4">
+						<h1>WHO<small> are the users of the system?</small></h1>
+				</div>
+				<div class="col-md-4">
+					<h1>WHAT<small> are the users goals?</small></h1>
+	
+				</div>
+				<div class="col-md-4">
+					<h1>HOW<small> do we fulfill those goals?</small></h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<ul id="wholist" class="list-unstyled">
+						{{#each whos}}
+							{{>who}}
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+			
 			
 			<div class="row">
 				<div class="col-md-12">
@@ -51,5 +73,4 @@
 				</div>
 			</div>
 		</div>
-	</div>	
 </template>

@@ -1,17 +1,32 @@
 <template name="how">
+	<div class="row">
+		<div class="col-md-12">
+			<li class="panel panel-how">
+				<div class="row">
+					<div class="panel-body">
+						<div class="col-xs-2">
+							<div class="how-icon">
+							<span class="glyphicon glyphicon-ok-sign"></span>
+							</div>
+						</div>
+						<div class="col-xs-10">
+							<h4>{{rank}} {{name}}</h4>
+							<p>Bacon ipsum dolor 
+							</p>
+						</div>
+					</div>
+				</div>
+				
+			</li>
+		</div>
+	</div>
+
+	<!-- old HOW
 	<li id="{{_id}}">
 		<p>{{rank}} {{name}}  
 			<a href="#" class="icon">
 				<span class="glyphicon glyphicon-remove deleteHow"></span>
 			</a>
 		</p>
-	</li>
-	<!--
-	<li class="panel panel-info" id="{{_id}}">
-		<div class="panel-heading panel-heading-how" id="{{_id}}">{{name}}</div>
-		<div class="panel-body">
-			<p>{{rank}} </p>
-			<button type="submit" class="btn btn-danger deleteHow pull-right btn-sm" href="#">Delete</button>			
-		</div>
 	</li> -->
 </template>

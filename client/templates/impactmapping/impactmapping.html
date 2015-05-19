@@ -1,27 +1,33 @@
 <template name="impactMapping">
-	<div class="row">
-		<div class="col-md-12">
-			<h2>Ny effektkartelista</h2>
+		<div class="col-md-8">
 			<ul id="impactMapList" class="list-unstyled">
 			{{#each impactMaps}}
-				<li>
-					<h4><i class="glyphicon glyphicon-cloud"></i>{{name}}</h4>
-					<p>Bacon ipsum dolor amet prosciutto flank pork chop hamburger. Spare ribs bacon capicola meatball, 
+				<li class="panel panel-impactmap">
+					<div class="panel-heading panel-heading-impactmap">
+						<!-- <h1><i class="glyphicon glyphicon-cloud"></i></h1> -->
+						<h4>{{name}}</h4>
+					</div>
+					<div class="panel-body panel-body-impactmap">
+						<p>Bacon ipsum dolor amet prosciutto flank pork chop hamburger. Spare ribs bacon capicola meatball, 
 						pig filet mignon meatloaf. Alcatra kevin kielbasa pork loin chicken landjaeger prosciutto. 
 						Turducken tongue ham hock, jowl shoulder kevin sirloin corned beef.
-					</p>	
+						</p>
+					</div>
+					
+						
 				</li>
 			{{/each}}
 			</ul>
 		</div>
-	</div>
-
-		<div class="page-header">
-			<h1>Impact Mapping</h1>
-		</div>	
-		
-		<div class="row">
+		<div class="col-md-4">
+			<p>buttons go here maybe</p>
+		</div>
+		<div class="col-md-12">
+			
 			<div class="col-md-12">	
+				<div class="page-header">
+					<h1>Impact Mapping</h1>
+				</div>	
 				<h4>Existing impact maps</h4>
 				<table class="table table-striped table-condensed table-hover table-bordered">
 					<thead>

@@ -232,25 +232,92 @@ body {
   margin-bottom: 60px;
 }
 .footer {
-  position: fixed;
+  /*position: fixed;*/
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #20202f;
 }
+.panel-impactmap {
+	border-radius: 0 !important;
+	background-color: #ffffff;
 
-#impactMapList > li{
-	padding: 8px;
-	margin-top: 16px;
-	background-color: #91CC4D;
-	color: #ffffff;
-	width: 50%; 
+	border-bottom: 1px solid #8bc34a;
 
+	color: #20202f;
 	font-size: 1em; 
+}
 
+.panel-heading-impactmap {
+
+}
+
+
+.panel-heading-impactmap > h4{
+	font-size: 2em; 
+}
+.panel-body-impactmap {
+
+}
+
+.panel-who{
+	background-color: #20202f;
+	color: #ffffff;
+	position: relative;
+}
+
+.who-icon{
+	text-align: center;
+	margin-top: 12px;
+	font-size: 4em;
+
+}
+
+.deleteWho {
+	color: #ffffff;
+	font-size: 2em;
 	
 }
+
+.editWho {
+	color: #ffffff;
+	font-size: 2em;
+	margin-top: 8px;
+	
+}
+
+.moveWho {
+	color: #ffffff;
+	font-size: 2em;
+	margin-top: 8px;
+}
+
+.panel-what{
+	background-color: #20202f;
+	color: #ffffff;
+}
+
+.what-icon{
+	text-align: center;
+
+	margin-top: 12px;
+	font-size: 4em;
+
+}
+
+.panel-how{
+	background-color: #20202f;
+	color: #ffffff;
+}
+
+.how-icon{
+	text-align: center;
+	margin-top: 12px;
+	font-size: 4em;
+
+}
+
 
 #whyList {
 	list-style-type: none; 
@@ -274,9 +341,7 @@ body {
         cursor: move;
 }
 
-#impactMapList {
-        cursor: move;
-}
+
 	
  
  #whoList .panel-heading {
@@ -295,7 +360,8 @@ body {
 
 
 .tool {
-	color: #cccccc;
+	opacity: 0.5;
+	color: #ff0000;
 	text-align: center; 
 	display: inline-block;
 	position: relative;
@@ -327,7 +393,7 @@ body {
 	
 
 .myhover{
-    background-color: rgba(50,50,50,1);
+    background-color: none;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -335,5 +401,6 @@ body {
     top: 0;
     left: 0;
     display: none;
-	text-align: center;
+	opacity: 1;
+
 }
