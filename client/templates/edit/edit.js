@@ -3,7 +3,7 @@ Template.edit.events({
         e.preventDefault();
         var name = document.getElementById("whoName").value;
 		var impactMapId = this._id;
-		Whos.insert({impactMap: impactMapId, name: name, rank:1})
+		Whos.insert({impactMap: impactMapId, whoName: name, rank:1})
 		return false;
     },
 	'submit #createWhy': function(e, t) {	
@@ -26,7 +26,7 @@ Template.edit.helpers({
 		return this.name;
 	},
 	whos: function(){
-		return Whos.find({impactMap: this._id}, {sort: {rank: 1} });
+		return Whos.find({}, {sort: {rank: 1} });
 	},
 	whys: function(){
 		return Whys.find({impactMap: this._id}, {sort: {rank: 1} });

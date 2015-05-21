@@ -10,9 +10,11 @@
 							</div>
 						</div>
 						<div class="col-xs-10">
-							<h4>{{rank}} {{name}}</h4>
+							<h4>{{rank}} {{name}} {{whoName}}</h4>
+							<p>{{impactMap}}</p>
 							<p>Jobbar under stressiga omständigheter med en ofta hög ljudnivå. Ninjor och pirater är två stora problem i vardagen</p>
 							<p>Har god datorvana och förståelse för teknik, men en hög personalomsättning</p>
+							
 						</div>
 					</div>
 					
@@ -26,7 +28,7 @@
 								<span class="glyphicon glyphicon-remove deleteWho"></span>
 							</a>
 							<a href="#" class="who-tool">
-								<span class="glyphicon glyphicon-edit editWho" data-toggle="modal" data-target="#editWhy"></span>
+								<span class="glyphicon glyphicon-edit editWho" data-toggle="modal" data-target="#editWho"></span>
 							</a>
 							<a href="#" class="who-tool">
 								<span class="glyphicon glyphicon-move moveWho"></span>
@@ -45,6 +47,38 @@
 				{{/each}}
 			</ul>
 		</div>
+	</div>
+		<!-- Modal -->
+	<div id="editWho" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Edit {{name}}</h4>		 
+		  </div>
+		  
+		  <div class="modal-body">
+		  
+			</div>
+			 <!--
+			<form role="form">
+			  <div class="form-group">
+				<label for="name">Name:</label>
+				<input type="name" class="form-control" id="whoName" value="{{name}}">
+			  </div>
+			</form>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-primary saveEditWho" data-dismiss="modal">Save</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		  </div>
+		  -->
+		</div>
+
+	  </div>
 	</div>
 	
 
@@ -70,4 +104,21 @@
 		</div>
 	</li>
 	-->
+</template>
+
+<!--
+<template name="insertWhoForm">
+  {{> quickForm fields='whoName,description' collection="Whos" id="insertWhoForm" type="insert" doc=this }}
+</template>
+-->
+
+<template name="insertWhoForm">
+  {{#autoForm collection="Whos" id="insertWhoForm" type="insert" doc=this}}
+    <fieldset>
+      <legend>Add a "WHO"</legend>
+      {{> afQuickField name='whoName'}}
+      {{> afQuickField name='description'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
 </template>
