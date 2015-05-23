@@ -17,8 +17,7 @@ Whos.attachSchema(new SimpleSchema({
 	},
 	'impactMap': {
 		type: String,
-		optional: true,
-		decimal: true
+		optional: true
 	}
 }));
 

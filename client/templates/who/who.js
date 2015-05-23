@@ -1,4 +1,12 @@
 Template.who.events({
+	'submit #updateWhoForm': function(e, t) {	
+        e.preventDefault();
+        var newWhoName = document.getElementById("whoName").value;
+		var newDescription = document.getElementById("description").value;
+		Whos.update({_id: this._id}, {$set: {whoName: newWhoName, description: newDescription}});
+		$("#updateWho" +this._id +"Modal").modal('hide');
+		return false;
+    },
 	'click .deleteWho' : function(e, t) {
 		e.preventDefault();
 		Whos.remove(this._id);
@@ -24,6 +32,10 @@ Template.who.events({
 Template.who.helpers({
 	whats: function(){
 		return Whats.find({who: this._id}, {sort: {rank: 1} });
+	},
+	currentWho: function(){
+		console.log(Whos.findOne({_id: this._id}));
+		return Whos.findOne({_id: this._id});
 	}
 });
 
@@ -44,32 +56,10 @@ AutoForm.hooks({
 	
 	
   insertWhoForm: {
-	  before: {
-    // Replace `formType` with the form `type` attribute to which this hook applies
-    insert: function(doc) {
-      // Potentially alter the doc
-      
 	  
-	  doc.impactMapId = Template.parentData(1)._id;
-	  // Then return it or pass it to this.result()
-      return doc;
-	  //this.result(doc);
-      //return false; (synchronous, cancel)
-      //this.result(doc); (asynchronous)
-      //this.result(false); (asynchronous, cancel)
-    }
-  },
 	 onSuccess: function(formType, result) {
-		 //console.log(Template.parentData(1)._id);
-		 //test = Template.parentData();
-		 console.log(this.template.data.doc._id);
 		 Whos.update({_id: result}, {$set: {impactMap: this.template.data.doc._id} });
-		 //console.log(result);
-		 
-	 },
-	onSubmit: function (insertDoc, updateDoc, currentDoc) {
-	  this.done();
-    }
+	 }
   }
 });
 
@@ -89,14 +79,4 @@ Template.who.onRendered(function () {
                 });
             }
 	})
-});
-
-Template.insertWhoForm.helpers({
-	document: function(){
-		//console.log(ImpactMaps.findOne({_id: this._id}));
-		impactMap = ImpactMaps.findOne({_id: this._id});
-		console.log(impactMap._id);
-		return impactMap._id;
-		//return ImpactMaps.findOne({id: this._id});
-	}
 });

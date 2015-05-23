@@ -290,6 +290,20 @@ body {
 	margin-top: 8px;
 }
 
+.who-headline{
+	position: relative;
+
+}
+
+
+.newWho{
+	font-size: 1.5em;
+	position: absolute;
+	top: 12px;
+	right: 55px;
+
+}
+
 .panel-what{
 	background-color: #20202f;
 	color: #ffffff;

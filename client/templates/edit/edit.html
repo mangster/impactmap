@@ -5,9 +5,11 @@
 			</div>
 			
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-4 who-headline">
 						<h1>WHO<small> are the users of the system?</small></h1>
-						{{>insertWhoForm}}
+						<a href="#" class="newWho">
+							<span class="glyphicon glyphicon-plus newWho" data-toggle="modal" data-target="#newWho"></span>
+						</a>
 				</div>
 				<div class="col-md-4">
 					<h1>WHAT<small> are the users goals?</small></h1>
@@ -74,4 +76,34 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- Modal -->
+		<div id="newWho" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Create new WHO</h4>
+			  </div>
+			  <div class="modal-body">
+				{{#autoForm collection="Whos" id="insertWhoForm" type="insert" doc=this setArrayItems=true}}
+				<fieldset>
+				  {{> afQuickField name='whoName'}}
+				  {{> afQuickField name='description' rows=6}}
+				</fieldset>
+				
+				<button type="submit" class="btn btn-primary">Insert</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				{{/autoForm}}
+			  </div>
+			</div>
+
+		  </div>
+		</div>		
+
+
+	  
+		
 </template>

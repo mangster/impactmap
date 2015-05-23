@@ -26,7 +26,7 @@ Template.edit.helpers({
 		return this.name;
 	},
 	whos: function(){
-		return Whos.find({}, {sort: {rank: 1} });
+		return Whos.find({impactMap: this._id}, {sort: {rank: 1} });
 	},
 	whys: function(){
 		return Whys.find({impactMap: this._id}, {sort: {rank: 1} });
