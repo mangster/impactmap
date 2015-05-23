@@ -10,9 +10,10 @@ Template.who.events({
     },
 	'submit #createWhatForm': function(e, t) {	
         e.preventDefault();
-        var newWhatName = document.getElementById("whatName").value;
+        var newWhatName = document.getElementById("createWhatName" + this._id).value;
+		var newWhatPriority = document.getElementById("createWhatPriority" + this._id).value;
 		var whoId = this._id;
-		Whats.insert({who: whoId, whatName: newWhatName})
+		Whats.insert({who: whoId, whatName: newWhatName, priority: newWhatPriority})
 		$("#createWhat" +this._id +"Modal").modal('hide');
 		return false;
     },
@@ -33,36 +34,12 @@ Template.who.events({
 
 Template.who.helpers({
 	whats: function(){
-		return Whats.find({who: this._id}, {sort: {rank: 1} });
+		return Whats.find({who: this._id}, {sort: {priority: 1} });
 	},
 	currentWho: function(){
 		console.log(Whos.findOne({_id: this._id}));
 		return Whos.findOne({_id: this._id});
 	}
-});
-
-/*
-AutoForm.hooks({
-  insertWhoForm : {
-    onSubmit : function(doc) {
-      console.log(doc);
-	  doc.impactMap = 200;
-      this.done(); //We've finished
-      return true; //Let autoForm do his default job now
-    }
-  }
-});
-
-*/
-AutoForm.hooks({
-	
-	
-  insertWhoForm: {
-	  
-	 onSuccess: function(formType, result) {
-		 Whos.update({_id: result}, {$set: {impactMap: this.template.data.doc._id} });
-	 }
-  }
 });
 
 Template.who.onRendered(function () {

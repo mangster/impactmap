@@ -88,7 +88,7 @@
 		  </div>
 		</div>
 		
-	<!-- Modal -->
+	<!-- Create WHAT modal -->
 		<div id="createWhat{{_id}}Modal" class="modal fade" role="dialog">
 		  <div class="modal-dialog">
 
@@ -101,8 +101,12 @@
 			  <div class="modal-body">
 				<form role="form" id="createWhatForm">
 					<div class="form-group">
-						<label for="whatName">Name</label>
-						<input type="text" class="form-control" id="whatName">
+						<label for="createWhatName{{_id}}">Name</label>
+						<input type="text" class="form-control" id="createWhatName{{_id}}">
+					</div>
+					<div class="form-group">
+						<label for="createWhatPriority{{_id}}">Priority</label>
+						<input type="number" class="form-control" id="createWhatPriority{{_id}}">
 					</div>
 				
 				<div class="modal-footer">

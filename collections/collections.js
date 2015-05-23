@@ -19,10 +19,10 @@ Whos.attachSchema(new SimpleSchema({
 		type: Number,
 		label: "Priority",
 	},	
-	'impactMap': {
+		impactMap: {
 		type: String,
-		optional: true
-	}
+		label: "Impact Map",
+	}	
 }));
 
 Whys = new Meteor.Collection("whys");
@@ -35,6 +35,10 @@ Whats.attachSchema(new SimpleSchema({
 		label: "Name",
 		max: 200
 	},
+		priority: {
+		type: Number,
+		label: "Priority",
+	},	
 		who: {
 		type: String,
 		label: "WHO",
