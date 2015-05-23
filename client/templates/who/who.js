@@ -1,10 +1,19 @@
 Template.who.events({
 	'submit #updateWhoForm': function(e, t) {	
         e.preventDefault();
-        var newWhoName = document.getElementById("whoName").value;
-		var newDescription = document.getElementById("description").value;
-		Whos.update({_id: this._id}, {$set: {whoName: newWhoName, description: newDescription}});
+        var newWhoName = document.getElementById("updateWhoName" + this._id).value;
+		var newWhoPriority = document.getElementById("updateWhoPriority" + this._id).value;
+		var newDescription = document.getElementById("updateWhoDescription" + this._id).value;
+		Whos.update({_id: this._id}, {$set: {whoName: newWhoName, description: newDescription, priority: newWhoPriority}});
 		$("#updateWho" +this._id +"Modal").modal('hide');
+		return false;
+    },
+	'submit #createWhatForm': function(e, t) {	
+        e.preventDefault();
+        var newWhatName = document.getElementById("whatName").value;
+		var whoId = this._id;
+		Whats.insert({who: whoId, whatName: newWhatName})
+		$("#createWhat" +this._id +"Modal").modal('hide');
 		return false;
     },
 	'click .deleteWho' : function(e, t) {
@@ -18,13 +27,6 @@ Template.who.events({
 		newName = document.getElementById("whoName").value;
 		console.log(newName);
 		Whos.update({_id: this.id}, {$set: {name: newName} });
-		return false;
-    },
-	'submit #createWhat': function(e, t) {	
-        e.preventDefault();
-        var name = document.getElementById("whatName" + this._id).value;
-		var whoId = this._id;
-		Whats.insert({who: whoId, name: name, rank:1})
 		return false;
     }
 });

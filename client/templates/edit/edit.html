@@ -8,7 +8,7 @@
 				<div class="col-md-4 who-headline">
 						<h1>WHO<small> are the users of the system?</small></h1>
 						<a href="#" class="newWho">
-							<span class="glyphicon glyphicon-plus newWho" data-toggle="modal" data-target="#newWho"></span>
+							<span class="glyphicon glyphicon-plus newWho" data-toggle="modal" data-target="#createWho{{_id}}Modal"></span>
 						</a>
 				</div>
 				<div class="col-md-4">
@@ -63,18 +63,6 @@
 					</ul>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<h4>Create new Who</h4>
-					<form class="form-inline" id="createWho">
-						<div class="form-group">
-							<label class="sr-only" for="whoName">Who Name</label>
-							<input type="text" class="form-control" id="whoName" placeholder="Who name">
-						</div>
-						<button type="submit" class="btn btn-primary">Create</button>
-					</form>
-				</div>
-			</div>
 		</div>
 		
 		<!-- Modal -->
@@ -101,7 +89,44 @@
 			</div>
 
 		  </div>
-		</div>		
+		</div>
+
+	<!-- Modal -->
+		<div id="createWho{{_id}}Modal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Create new WHO</h4>
+			  </div>
+			  <div class="modal-body">
+				<form role="form" id="createWhoForm">
+					<div class="form-group">
+						<label for="createWhoName{{_id}}">Name</label>
+						<input type="text" class="form-control" id="createWhoName{{_id}}">
+					</div>
+					<div class="form-group">
+						<label for="createWhoPriority{{_id}}">Priority</label>
+						<input type="number" class="form-control" id="createWhoPriority{{_id}}">
+					</div>
+					<div class="form-group">
+						<label for="createWhoDescription{{_id}}">Description</label>
+						<textarea class="form-control" rows="3" id="createWhoDescription{{_id}}"></textarea>
+					</div>
+				
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary">Create</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				</div>
+				</form>
+     
+			  </div>
+			</div>
+
+		  </div>
+		</div>			
 
 
 	  

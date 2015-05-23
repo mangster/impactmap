@@ -10,7 +10,7 @@
 							</div>
 						</div>
 						<div class="col-xs-10">
-							<h4>{{rank}} {{name}} {{whoName}}</h4>
+							<h4>{{priority}} {{whoName}}</h4>
 							<p>{{description}}</p>
 							
 							
@@ -28,6 +28,9 @@
 							</a>
 							<a href="#" class="who-tool">
 								<span class="glyphicon glyphicon-edit editWho" data-toggle="modal" data-target="#updateWho{{_id}}Modal"></span>
+							</a>
+							<a href="#" class="who-tool">
+								<span class="glyphicon glyphicon-plus createWhat" data-toggle="modal" data-target="#createWhat{{_id}}Modal"></span>
 							</a>
 							<!--<a href="#" class="who-tool">
 								<span class="glyphicon glyphicon-move moveWho"></span>
@@ -48,7 +51,7 @@
 		</div>
 	</div>
 	
-	<!-- Modal -->
+	<!-- Update WHO modal -->
 		<div id="updateWho{{_id}}Modal" class="modal fade" role="dialog">
 		  <div class="modal-dialog">
 
@@ -61,12 +64,16 @@
 			  <div class="modal-body">
 				<form role="form" id="updateWhoForm">
 					<div class="form-group">
-						<label for="whoName">Name</label>
-						<input type="text" class="form-control" id="whoName" value="{{whoName}}">
+						<label for="updateWhoName{{_id}}">Name</label>
+						<input type="text" class="form-control" id="updateWhoName{{_id}}" value="{{whoName}}">
 					</div>
 					<div class="form-group">
-						<label for="description">Description</label>
-						<textarea class="form-control" rows="3" id="description" value="{{description}}"></textarea>
+						<label for="updateWhoPriority{{_id}}">Priority</label>
+						<input type="number" class="form-control" id="updateWhoPriority{{_id}}" value="{{priority}}">
+					</div>
+					<div class="form-group">
+						<label for="updateWhoDescription{{_id}}">Description</label>
+						<textarea class="form-control" rows="3" id="updateWhoDescription{{_id}}" value="{{description}}"></textarea>
 					</div>
 				
 				<div class="modal-footer">
@@ -80,6 +87,35 @@
 
 		  </div>
 		</div>
+		
+	<!-- Modal -->
+		<div id="createWhat{{_id}}Modal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Create new WHAT</h4>
+			  </div>
+			  <div class="modal-body">
+				<form role="form" id="createWhatForm">
+					<div class="form-group">
+						<label for="whatName">Name</label>
+						<input type="text" class="form-control" id="whatName">
+					</div>
+				
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary">Create</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				</div>
+				</form>
+     
+			  </div>
+			</div>
+
+		  </div>
+		</div>		
 
 </template>
 

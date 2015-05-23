@@ -1,4 +1,14 @@
 Template.edit.events({
+	'submit #createWhoForm': function(e, t) {	
+        e.preventDefault();
+		var impactMapId = this._id;
+        var newWhoName = document.getElementById("createWhoName" + this._id).value;
+		var newDescription = document.getElementById("createWhoDescription" + this._id).value;
+		var newPriority = document.getElementById("createWhoPriority" + this._id).value;
+		Whos.insert({impactMap: impactMapId, whoName: newWhoName, description: newDescription, priority: newPriority})
+		$("#createWho" +this._id +"Modal").modal('hide');
+		return false;
+    },
 	'submit #createWho': function(e, t) {	
         e.preventDefault();
         var name = document.getElementById("whoName").value;
@@ -26,7 +36,7 @@ Template.edit.helpers({
 		return this.name;
 	},
 	whos: function(){
-		return Whos.find({impactMap: this._id}, {sort: {rank: 1} });
+		return Whos.find({impactMap: this._id}, {sort: {priority: 1} });
 	},
 	whys: function(){
 		return Whys.find({impactMap: this._id}, {sort: {rank: 1} });
