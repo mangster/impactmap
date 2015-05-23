@@ -52,17 +52,6 @@
 					</form>
 				</div>
 			</div>
-			
-			<div class="row">
-				<div class="col-md-12">
-					<h2>Who</h2>
-					<ul id="whoList" class="list-unstyled">
-					{{#each whos}}
-							{{>who}}
-					{{/each}}
-					</ul>
-				</div>
-			</div>
 		</div>
 		
 		<!-- Modal -->
@@ -109,7 +98,7 @@
 					</div>
 					<div class="form-group">
 						<label for="createWhoPriority{{_id}}">Priority</label>
-						<input type="number" class="form-control" id="createWhoPriority{{_id}}">
+						<input type="number" class="form-control" id="createWhoPriority{{_id}}" value="1">
 					</div>
 					<div class="form-group">
 						<label for="createWhoDescription{{_id}}">Description</label>

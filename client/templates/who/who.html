@@ -101,12 +101,12 @@
 			  <div class="modal-body">
 				<form role="form" id="createWhatForm">
 					<div class="form-group">
-						<label for="createWhatName{{_id}}">Name</label>
-						<input type="text" class="form-control" id="createWhatName{{_id}}">
+						<label for="createWhatName{{_id}}">Description</label>
+						<input type="text" class="form-control" id="createWhatName{{_id}}" value="Wants to ">
 					</div>
 					<div class="form-group">
 						<label for="createWhatPriority{{_id}}">Priority</label>
-						<input type="number" class="form-control" id="createWhatPriority{{_id}}">
+						<input type="number" class="form-control" id="createWhatPriority{{_id}}" value="1">
 					</div>
 				
 				<div class="modal-footer">
@@ -121,15 +121,4 @@
 		  </div>
 		</div>		
 
-</template>
-
-<template name="insertWhoForm">
-  {{#autoForm collection="Whos" id="insertWhoForm" type="insert" doc=this}}
-    <fieldset>
-      <legend>Add a "WHO"</legend>
-      {{> afQuickField name='whoName'}}
-      {{> afQuickField name='description'}}
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Insert</button>
-  {{/autoForm}}
 </template>
