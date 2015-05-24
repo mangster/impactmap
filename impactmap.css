@@ -301,6 +301,17 @@ body {
 
 }
 
+.btn-black {
+	background: #20202f;
+	background-image: none;
+	border:none;
+	color: #fff;
+}
+
+.btn-black:hover {
+	color: #fff;
+	background: #8bc34a;
+}
 
 .newWho{
 	font-size: 1.5em;
@@ -351,8 +362,19 @@ body {
 	text-align: center;
 	margin-top: 12px;
 	font-size: 4em;
-
 }
+
+.deleteHow {
+	color: #ffffff;
+	font-size: 2em;
+	
+}
+
+.editHow {
+	color: #ffffff;
+	font-size: 2em;
+	margin-top: 4px;
+}	
 
 
 #whyList {

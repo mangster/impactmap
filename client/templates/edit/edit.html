@@ -7,9 +7,6 @@
 			<div class="row">
 				<div class="col-md-4 who-headline">
 						<h1>WHO<small> are the users of the system?</small></h1>
-						<a href="#" class="newWho">
-							<span class="glyphicon glyphicon-plus newWho" data-toggle="modal" data-target="#createWho{{_id}}Modal"></span>
-						</a>
 				</div>
 				<div class="col-md-4">
 					<h1>WHAT<small> are the users goals?</small></h1>
@@ -25,6 +22,15 @@
 						{{#each whos}}
 							{{>who}}
 						{{/each}}
+						<div class="row">
+							<div class="col-md-4">
+								<li>
+									<button type="submit" class="btn panel btn-black" data-toggle="modal" data-target="#createWho{{_id}}Modal"><span class="glyphicon glyphicon-plus"></span> New WHO</button>
+								</li>
+							</div>
+						</div>
+						
+						
 					</ul>
 				</div>
 			</div>

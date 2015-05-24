@@ -28,17 +28,13 @@
 							<a href="#">
 								<span class="glyphicon glyphicon-edit editWhat" data-toggle="modal" data-target="#updateWhat{{_id}}Modal"></span>
 							</a>
+							<!--
 							<a href="#">
 								<span class="glyphicon glyphicon-plus createHow" data-toggle="modal" data-target="#createHow{{_id}}Modal"></span>
-							</a>
-							<!--<a href="#" class="who-tool">
-								<span class="glyphicon glyphicon-move moveWho"></span>
-							</a> -->
-							
-							
+							</a> -->														
 						</div>
 					</div>
-					</div>
+				</div>
 			</li>
 		</div>
 		<div class="col-md-6">
@@ -46,6 +42,13 @@
 				{{#each hows}}
 					{{>how}}
 				{{/each}}
+				<div class="row">
+					<div class="col-md-12">
+						<li>
+							<button type="submit" class="btn panel btn-black" data-toggle="modal" data-target="#createHow{{_id}}Modal"><span class="glyphicon glyphicon-plus"></span> New HOW</button>
+						</li>
+					</div>
+				</div>
 			</ul>
 		</div>
 	</div>
