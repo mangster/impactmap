@@ -4,13 +4,23 @@ Template.what.events({
 		Whats.remove(this._id);
 		return false;
     },
-	'submit #createHow': function(e, t) {	
+	'submit #createHowForm': function(e, t) {	
         e.preventDefault();
-        var name = document.getElementById("howName" + this._id).value;
+        var newHowName = document.getElementById("createHowName" + this._id).value;
+		var newHowPriority = document.getElementById("createHowPriority" + this._id).value;
 		var whatId = this._id;
-		Hows.insert({what: whatId, name: name, rank:1})
+		Hows.insert({what: whatId, howName: newHowName, priority: newHowPriority})
+		$("#createHow" +this._id +"Modal").modal('hide');
 		return false;
-    }
+    },
+	'submit #updateWhatForm': function(e, t) {	
+        e.preventDefault();
+        var newWhatName = document.getElementById("updateWhatName" + this._id).value;
+		var newWhatPriority = document.getElementById("updateWhatPriority" + this._id).value;
+		Whats.update({_id: this._id}, {$set: {whatName: newWhatName, priority: newWhatPriority}});
+		$("#updateWhat" +this._id +"Modal").modal('hide');
+		return false;
+    },
 });
 
 

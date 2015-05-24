@@ -313,6 +313,7 @@ body {
 .panel-what{
 	background-color: #20202f;
 	color: #ffffff;
+	position: relative;
 }
 
 .what-icon{
@@ -321,6 +322,24 @@ body {
 	margin-top: 12px;
 	font-size: 4em;
 
+}
+
+.deleteWhat {
+	color: #ffffff;
+	font-size: 2em;
+	
+}
+
+.editWhat {
+	color: #ffffff;
+	font-size: 2em;
+	margin-top: 4px;
+}	
+
+.createHow {
+	color: #ffffff;
+	font-size: 2em;
+	margin-top: 4px;
 }
 
 .panel-how{
@@ -394,22 +413,22 @@ body {
 	color: #cccccc;
 	text-decoration: none;
 }
-.myhover a:visited{
+.hoverToolBar a:visited{
 	color: #cccccc;
 	text-decoration: none;
 }
-.myhover a:hover{
+.hoverToolBar a:hover{
 	color: #ffffff;
 	text-decoration: none;
 }
-.myhover a:active{
+.hoverToolBar a:active{
 	color: #cccccc;
 	text-decoration: none;
 }
 
 	
 
-.myhover{
+.hoverToolBar{
     background-color: none;
     position: absolute;
     height: 100%;

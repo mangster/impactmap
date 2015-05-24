@@ -81,9 +81,9 @@ Template.edit.onRendered(function () {
 	
 	
 	$("#wholist").on("mouseenter", "li", function(){						
-        $(this).find('.myhover').fadeIn(400);
+        $(this).find('.hoverToolBar').fadeIn(400);
     }).on("mouseleave", "li", function(){	
-        $(this).find('.myhover').stop().fadeOut(100);
+        $(this).find('.hoverToolBar').stop().fadeOut(100);
     });
 });
 

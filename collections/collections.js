@@ -44,5 +44,22 @@ Whats.attachSchema(new SimpleSchema({
 		label: "WHO",
 	}
 }));
+
 Hows = new Meteor.Collection("hows");
+
+Hows.attachSchema(new SimpleSchema({
+		howName: {
+		type: String,
+		label: "Name",
+		max: 200
+	},
+		priority: {
+		type: Number,
+		label: "Priority",
+	},	
+		what: {
+		type: String,
+		label: "WHO",
+	}
+}));
 

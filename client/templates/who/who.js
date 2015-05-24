@@ -57,5 +57,10 @@ Template.who.onRendered(function () {
 					 Whats.update({_id: this.id}, {$set: {rank: index+1}});
                 });
             }
-	})
+	});
+	$("#whatlist").on("mouseenter", "li", function(){						
+        $(this).find('.hoverToolBar').fadeIn(400);
+    }).on("mouseleave", "li", function(){	
+        $(this).find('.hoverToolBar').stop().fadeOut(100);
+    });
 });

@@ -16,7 +16,29 @@
 						</div>
 					</div>
 				</div>
-				
+				<!-- Hover div containing the toolbar -->
+				<div class="hoverToolBar">
+					<div class="panel-body">
+						<div class="col-xs-11">
+						</div>
+						<div class="col-xs-1">
+							<a href="#">
+								<span class="glyphicon glyphicon-remove deleteWhat"></span>
+							</a>
+							<a href="#">
+								<span class="glyphicon glyphicon-edit editWhat" data-toggle="modal" data-target="#updateWhat{{_id}}Modal"></span>
+							</a>
+							<a href="#">
+								<span class="glyphicon glyphicon-plus createHow" data-toggle="modal" data-target="#createHow{{_id}}Modal"></span>
+							</a>
+							<!--<a href="#" class="who-tool">
+								<span class="glyphicon glyphicon-move moveWho"></span>
+							</a> -->
+							
+							
+						</div>
+					</div>
+					</div>
 			</li>
 		</div>
 		<div class="col-md-6">
@@ -27,29 +49,71 @@
 			</ul>
 		</div>
 	</div>
+	
+		<!-- Update WHAT modal -->
+		<div id="updateWhat{{_id}}Modal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
 
-
-
-	<!-- old WHAT
-	<li class="panel panel-info" id="{{_id}}">
-		<div class="panel-heading panel-heading-what" id="{{_id}}">{{rank}} {{name}}</div>
-		<div class="panel-body">
-			<ul id="howList{{_id}}" class="list-unstyled">
-			{{#each hows}}
-					{{>how}}
-			{{/each}}
-			</ul>
-			
-			<form class="form-inline" id="createHow">
-				<div class="form-group">
-					<label class="sr-only" for="howName">How Name</label>
-					<input type="text" class="form-control" id="howName{{_id}}" placeholder="How name">
-				</div>
-				<button type="submit" class="btn btn-primary">Create</button>
-				<button type="submit" class="btn btn-danger deleteWhat pull-right btn-sm" href="#">Delete What</button>		
-			</form>
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Edit {{whatName}}</h4>
+			  </div>
+			  <div class="modal-body">
+				<form role="form" id="updateWhatForm">
+					<div class="form-group">
+						<label for="updateWhatName{{_id}}">Name</label>
+						<input type="text" class="form-control" id="updateWhatName{{_id}}" value="{{whatName}}">
+					</div>
+					<div class="form-group">
+						<label for="updateWhatPriority{{_id}}">Priority</label>
+						<input type="number" class="form-control" id="updateWhatPriority{{_id}}" value="{{priority}}">
+					</div>
 				
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary">Save</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				</div>
+				</form>
+     
+			  </div>
+			</div>
+
+		  </div>
 		</div>
-	</li>
-	-->
+		
+	<!-- Create HOW modal -->
+		<div id="createHow{{_id}}Modal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Create new HOW</h4>
+			  </div>
+			  <div class="modal-body">
+				<form role="form" id="createHowForm">
+					<div class="form-group">
+						<label for="createHowName{{_id}}">Description</label>
+						<input type="text" class="form-control" id="createHowName{{_id}}" value="Is able to ">
+					</div>
+					<div class="form-group">
+						<label for="createHowPriority{{_id}}">Priority</label>
+						<input type="number" class="form-control" id="createHowPriority{{_id}}" value="1">
+					</div>
+				
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary">Create</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				</div>
+				</form>
+     
+			  </div>
+			</div>
+
+		  </div>
+		</div>	
+
 </template>
