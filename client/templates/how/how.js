@@ -13,3 +13,11 @@ Template.how.events({
 		return false;
     },
 });
+
+Template.how.helpers({
+	color: function(){
+		what = Whats.findOne(this.what);
+		who = Whos.findOne(what.who);
+		return who.color;
+	}
+});

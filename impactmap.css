@@ -258,8 +258,30 @@ body {
 
 }
 
-.panel-who{
+.black {
 	background-color: #20202f;
+}
+
+.blue {
+	background-color: #2B2B99;
+}
+
+.green {
+	background-color: #8bc34a;
+}
+
+.purple {
+	background-color: #9F31B2;
+}
+
+.brown {
+	background-color: #CCAA4C;
+}
+
+
+
+.panel-who{
+
 	color: #ffffff;
 	position: relative;
 }
@@ -322,7 +344,7 @@ body {
 }
 
 .panel-what{
-	background-color: #20202f;
+	/* background-color: #20202f; */
 	color: #ffffff;
 	position: relative;
 }
@@ -354,7 +376,7 @@ body {
 }
 
 .panel-how{
-	background-color: #20202f;
+	
 	color: #ffffff;
 }
 

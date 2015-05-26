@@ -27,6 +27,9 @@ Template.what.events({
 Template.what.helpers({
 	hows: function(){
 		return Hows.find({what: this._id}, {sort: {rank: 1} });
+	},
+	color: function(){
+		return Whos.findOne(this.who).color;
 	}
 });
 

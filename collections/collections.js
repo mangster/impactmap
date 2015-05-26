@@ -15,6 +15,11 @@ Whos.attachSchema(new SimpleSchema({
 		optional: true,
 		max: 1000
 	},
+		color: {
+		type: String,
+		label: "Color",
+		optional: true,
+	},
 		priority: {
 		type: Number,
 		label: "Priority",
@@ -38,7 +43,12 @@ Whats.attachSchema(new SimpleSchema({
 		priority: {
 		type: Number,
 		label: "Priority",
-	},	
+	},/*
+		color: {
+		type: String,
+		label: "Color",
+		optional: true,
+	},	*/
 		who: {
 		type: String,
 		label: "WHO",
@@ -56,7 +66,12 @@ Hows.attachSchema(new SimpleSchema({
 		priority: {
 		type: Number,
 		label: "Priority",
-	},	
+	},/*
+		color: {
+		type: String,
+		label: "Color",
+		optional: true,
+	},*/
 		what: {
 		type: String,
 		label: "WHO",

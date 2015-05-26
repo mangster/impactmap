@@ -1,7 +1,7 @@
 <template name="who">
 	<div class="row">
 		<div class="col-md-4">
-			<li class="panel panel-who">
+			<li class="panel panel-who {{color}}">
 				<div class="row">
 					<div class="panel-body">
 						<div class="col-xs-2">
@@ -86,6 +86,19 @@
 						<label for="updateWhoDescription{{_id}}">Description</label>
 						<textarea class="form-control" rows="3" id="updateWhoDescription{{_id}}" value="{{description}}"></textarea>
 					</div>
+					
+					<div class="form-group">
+						<label for="updateWhoColor">Color</label>
+						<select class="form-control" id="updateWhoColor{{_id}}">
+							<option value="" disabled selected>{{color}}</option>
+							<option value="black">black</option>
+							<option value="blue">blue</option>
+							<option value="green">green</option>
+							<option value="purple">purple</option>
+							<option value="brown">brown</option>
+						</select>
+					</div>
+					
 				
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-primary">Save</button>

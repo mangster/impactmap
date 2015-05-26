@@ -4,7 +4,9 @@ Template.who.events({
         var newWhoName = document.getElementById("updateWhoName" + this._id).value;
 		var newWhoPriority = document.getElementById("updateWhoPriority" + this._id).value;
 		var newDescription = document.getElementById("updateWhoDescription" + this._id).value;
-		Whos.update({_id: this._id}, {$set: {whoName: newWhoName, description: newDescription, priority: newWhoPriority}});
+		var newWhoColor = document.getElementById("updateWhoColor" + this._id).value;
+		Whos.update({_id: this._id}, {$set: {whoName: newWhoName, description: newDescription, priority: newWhoPriority, color: newWhoColor}});
+		// TODO change color for all sub-items as well
 		$("#updateWho" +this._id +"Modal").modal('hide');
 		return false;
     },
@@ -13,7 +15,8 @@ Template.who.events({
         var newWhatName = document.getElementById("createWhatName" + this._id).value;
 		var newWhatPriority = document.getElementById("createWhatPriority" + this._id).value;
 		var whoId = this._id;
-		Whats.insert({who: whoId, whatName: newWhatName, priority: newWhatPriority})
+		var whoColor = this.color;
+		Whats.insert({who: whoId, whatName: newWhatName, priority: newWhatPriority, color: whoColor})
 		$("#createWhat" +this._id +"Modal").modal('hide');
 		return false;
     },
@@ -44,6 +47,8 @@ Template.who.helpers({
 
 Template.who.onRendered(function () {
 	var whatList = $('#whatList'+ this.data._id);
+	//console.log(this.data._id);
+	//console.log("#updateWhoColor" + this._id);
 	whatList.sortable({
             // Only make the .panel-heading child elements support dragging.
             // Omit this to make then entire <li>...</li> draggable.

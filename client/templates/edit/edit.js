@@ -5,7 +5,8 @@ Template.edit.events({
         var newWhoName = document.getElementById("createWhoName" + this._id).value;
 		var newDescription = document.getElementById("createWhoDescription" + this._id).value;
 		var newPriority = document.getElementById("createWhoPriority" + this._id).value;
-		Whos.insert({impactMap: impactMapId, whoName: newWhoName, description: newDescription, priority: newPriority})
+		var newWhoColor = document.getElementById("createWhoColor" + this._id).value;
+		Whos.insert({impactMap: impactMapId, whoName: newWhoName, description: newDescription, priority: newPriority, color: newWhoColor})
 		$("#createWho" +this._id +"Modal").modal('hide');
 		return false;
     },
