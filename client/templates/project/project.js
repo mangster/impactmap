@@ -1,12 +1,12 @@
 Template.project.events({
 	'submit #createWhoForm': function(e, t) {	
         e.preventDefault();
-		var impactMapId = this._id;
+		var projectId = this._id;
         var newWhoName = document.getElementById("createWhoName" + this._id).value;
 		var newDescription = document.getElementById("createWhoDescription" + this._id).value;
 		var newPriority = document.getElementById("createWhoPriority" + this._id).value;
 		var newWhoColor = document.getElementById("createWhoColor" + this._id).value;
-		Whos.insert({impactMap: impactMapId, whoName: newWhoName, description: newDescription, priority: newPriority, color: newWhoColor})
+		Whos.insert({project: projectId, whoName: newWhoName, description: newDescription, priority: newPriority, color: newWhoColor})
 		$("#createWho" +this._id +"Modal").modal('hide');
 		return false;
     },
@@ -37,7 +37,7 @@ Template.project.helpers({
 		return this.name;
 	},
 	whos: function(){
-		return Whos.find({impactMap: this._id}, {sort: {priority: 1} });
+		return Whos.find({project: this._id}, {sort: {priority: 1} });
 	},
 	whys: function(){
 		return Whys.find({impactMap: this._id}, {sort: {rank: 1} });

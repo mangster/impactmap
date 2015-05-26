@@ -1,18 +1,18 @@
 Template.projects.events({
-    'submit #createImpactMap': function(e, t) {	
+    'submit #createProject': function(e, t) {	
         e.preventDefault();
-        var name = document.getElementById("impactMapName").value;
-		ImpactMaps.insert({owner: Meteor.userId(), name: name})
+        var newProjectName = document.getElementById("newProjectName").value;
+		Projects.insert({owner: Meteor.userId(), projectName: newProjectName})
+		return false;
+    },
+	'click .deleteProject' : function(e, t) {
+		e.preventDefault();
+		Projects.remove(this._id);
 		return false;
     },
 	'click .openProject' : function(e, t) {
 		e.preventDefault();
 		Router.go("project.show", {_id: this._id});
-		return false;
-    },
-	'click .deleteImpactMap' : function(e, t) {
-		e.preventDefault();
-		ImpactMaps.remove(this._id);
 		return false;
     }
 });
@@ -20,7 +20,7 @@ Template.projects.events({
 
 
 Template.projects.helpers({
-	impactMaps: function(){
-		return ImpactMaps.find({}, { sort: { name: 1 }});
+	projects: function(){
+		return Projects.find({}, { sort: { projectName: 1 }});
 	}
 })

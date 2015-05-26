@@ -1,4 +1,4 @@
-Meteor.subscribe("impactMaps");
+Meteor.subscribe("projects");
 
 Meteor.subscribe("userData");
 

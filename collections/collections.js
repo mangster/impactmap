@@ -1,5 +1,5 @@
 // Post model
-ImpactMaps = new Meteor.Collection("impactMaps");
+Projects = new Meteor.Collection("projects");
 
 Whos = new Meteor.Collection("whos");
 
@@ -23,11 +23,11 @@ Whos.attachSchema(new SimpleSchema({
 		priority: {
 		type: Number,
 		label: "Priority",
-	},	
-		impactMap: {
+	},
+	project: {
 		type: String,
-		label: "Impact Map",
-	}	
+		label: "Project",
+	}
 }));
 
 Whys = new Meteor.Collection("whys");
@@ -43,12 +43,7 @@ Whats.attachSchema(new SimpleSchema({
 		priority: {
 		type: Number,
 		label: "Priority",
-	},/*
-		color: {
-		type: String,
-		label: "Color",
-		optional: true,
-	},	*/
+	},
 		who: {
 		type: String,
 		label: "WHO",
@@ -66,12 +61,7 @@ Hows.attachSchema(new SimpleSchema({
 		priority: {
 		type: Number,
 		label: "Priority",
-	},/*
-		color: {
-		type: String,
-		label: "Color",
-		optional: true,
-	},*/
+	},
 		what: {
 		type: String,
 		label: "WHO",
