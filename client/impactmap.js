@@ -12,6 +12,7 @@ Router.map(function () {
 	this.route('impactMapping');
 	this.route('projects');
 	this.route('edit');
+	this.route('project');
 });
 
 Router.route('/edit/:_id', function () {
@@ -22,6 +23,16 @@ Router.route('/edit/:_id', function () {
 	});
 }, {
 	name: 'edit.show'
+});
+
+Router.route('/project/:_id', function () {
+	this.render('project', {
+		data: function () {
+		  return ImpactMaps.findOne({_id: this.params._id});
+		}
+	});
+}, {
+	name: 'project.show'
 });
 
 

@@ -11,7 +11,7 @@ Meteor.publish("whos", function () {
     return Whos.find();
 });
 
-// Any client may insert, update, or remove a post without restriction
+// Any client may insert, update, or remove a WHO without restriction
 Whos.permit(['insert', 'update', 'remove']).apply();
 
 

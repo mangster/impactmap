@@ -1,22 +1,45 @@
 <template name="projects">
-	<div class="col-md-12">
-		<div class="page-header">
-			<h1>Honestly atm this is just playing with design</h1>
+		<div class="col-md-12">
+			
+			<div class="col-md-12">	
+				<div class="page-header">
+					<h1>Impact Mapping</h1>
+				</div>	
+				<h4>Existing impact maps</h4>
+				<table class="table table-striped table-condensed table-hover table-bordered">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each impactMaps}}
+						<tr>
+							<td>{{name}}</td>
+							<td>
+								<button type="submit" class="btn btn-primary openProject" href="#">Open</button>
+								<button type="submit" class="btn btn-danger deleteImpactMap" href="#">Delete</button>
+							</td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				
+				<h4>Create new impact map</h4>
+				<form class="form-inline" id="createImpactMap">
+					<div class="form-group">
+						<label class="sr-only" for="impactMapName">Impact Map Name</label>
+						<input type="text" class="form-control" id="impactMapName" placeholder="Impact map name">
+					</div>
+					<button type="submit" class="btn btn-primary">Create</button>
+				</form>
+			</div>
 		</div>	
-		<h4>Buttons custom</h4>
-			<button type="submit" class="btn btn-geckoboard" href="#">Geckoboard</button>
-			<button type="submit" class="btn btn-basecamp" href="#">Basecamp</button>
-			<button type="submit" class="btn btn-zoomshift" href="#">Zoomshift</button>
-			<button type="submit" class="btn btn-stripe" href="#">Stripe</button>
-		<h4>Buttons bootstrap</h4>
-			<button type="submit" class="btn btn-default" href="#">default</button>
-			<button type="submit" class="btn btn-primary" href="#">primary</button>
-			<button type="submit" class="btn btn-success" href="#">success</button>
-			<button type="submit" class="btn btn-info" href="#">info</button>
-			<button type="submit" class="btn btn-warning" href="#">warning</button>
-			<button type="submit" class="btn btn-danger" href="#">danger</button>
-		<h4>Buttons impactmap</h4>
-			<button type="submit" class="btn btn-green" href="#">Green</button>
-	</div>
 </template>
 
