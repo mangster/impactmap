@@ -1,4 +1,13 @@
+body {
+    /*background-color:#000000;*/
+}
 
+.maincontainer{
+    max-width: 1500px;
+}
+h1 {
+   font-family: 'Poiret One', cursive;
+}
 /*
 h1 {
     font-family: 'Allerta', Helvetica, Arial, sans-serif;
@@ -17,52 +26,64 @@ p {
 .navbar-default {
 	/*background-color: #8bc34a;*/
 	background-color: #20202f;
-    border-color: #ffffff;
+    border: 0px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    border-color: #20202f;
 	font-size: 1em;
-
-
-	/*font-family: "Times New Roman", Georgia, Serif;*/
 }
 /* title */
 .navbar-default .navbar-brand {
-	background-color: #8bc34a;
+	/*background-color: #8bc34a;*/
+    line-height: 1;
     color: #ffffff;
-	
+    padding: 0px;
+    padding-top: 5px;
+	font-size: 1.9em;
+    margin-right: 48px;
+    font-family: 'Poiret One', cursive;
+    /*font-family: 'Lobster', cursive;*/
 	
 }
+
+#logo {
+    color: #8bc34a;
+    font-size: 1.2em;
+    margin-right: 12px;
+    
+}
+
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
     color: #ffffff;
-	background-color: #8bc34a;
+	/*background-color: #8bc34a;*/
 }
 /* link */
 .navbar-default .navbar-nav > li > a {
+    padding: 0px;
+    padding-top: 20px;
 	text-align: center;
-	text-transform: uppercase;
-	font-weight: bold;
     color: #ffffff;
 }
 
 .navbar-default .navbar-nav > li > a:hover{
 	color: #ffffff;
-	background-color: #8bc34a;
 }
 .navbar-default .navbar-nav > li > a:focus {
-    color: #20202f;
-	background-color: #ffffff;
+    color: #ffffff;
 
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
-    color: #555;
-    background-color: #E7E7E7;
+    color: #ffffff;
+    background-color: #20202f;
 }
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {
-    color: #20202f;
-    background-color: #ffffff;
+    color: #ffffff;
+    background-color: #20202f;
 }
 /* caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
@@ -76,16 +97,16 @@ p {
     border-bottom-color: #ffffff;
 }
 .navbar-default .navbar-nav > .open > a .caret{
-	border-top-color: #20202f;
-    border-bottom-color: #20202f;
+	border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
 } 
 .navbar-default .navbar-nav > .open > a:hover .caret{
-	border-top-color: #20202f;
-    border-bottom-color: #20202f;
+	border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
 } 
 .navbar-default .navbar-nav > .open > a:focus .caret {
-    border-top-color: #20202f;
-    border-bottom-color: #20202f;
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
 }
 
 .navbar-default .navbar-right > li > a {

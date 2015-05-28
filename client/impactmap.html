@@ -3,23 +3,26 @@
 <head>
 	<!-- <link href="http://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Allerta" rel="stylesheet" type="text/css"> -->
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<title>impactmap</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 
 <template name="main">
-	<div class="container-fluid">
-		<div class="row">
+	
+		
 			{{> navbar }}
-		</div>
+
+    <div class="container-fluid maincontainer">
 		<div class="row">
 			{{#if currentUser}}
 				
 					{{> yield}}
 				
 			{{else}}
-					{{> loggedOut}}
+					{{> home}}
 				
 			{{/if}}
 		</div>
@@ -33,15 +36,3 @@
 	</div>
 </template>
 
-<template name="home">
-	<div class="container">
-		<h1>Startpage</h1>
-		<p>Information and whatnot</p>
-	</div>
-</template>
-
-<template name="loggedOut">
-	<div class="container">
-		<p>Dude you're like totally not logged in</p>
-	</div>
-</template>

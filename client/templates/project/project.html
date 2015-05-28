@@ -1,7 +1,24 @@
 <template name="project">
 		<div class="col-md-12">
-			<div class="page-header">
-				<button type="submit" class="btn btn-default goBack" href="#">Close</button><h1>{{name}}</h1> 
+			<button type="submit" class="btn btn-default closeProject" href="#">Close</button>
+			<h1>{{projectName}}</h1> 
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-tabs">
+						<li class="{{ activeIfTemplateIs 'backlog' }}">
+							<a href="{{pathFor 'project.backlog'}}">Backlog</a>
+						</li>
+						<li class="{{ activeIfTemplateIs 'impactMap' }}">
+							<a href="{{pathFor 'project.impactMap'}}">Impact Map</a>
+						</li>
+						<li class="{{ activeIfTemplateIs 'userStoryMap' }}">
+							<a href="{{pathFor 'project.userStoryMap'}}">User Story Map</a>
+						</li>
+						<li class="{{ activeIfTemplateIs 'projectSettings' }}">
+							<a href="{{pathFor 'project.projectSettings'}}">Settings</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 			
 			<div class="row">

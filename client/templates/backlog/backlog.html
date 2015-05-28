@@ -1,0 +1,36 @@
+<template name="backlog">
+	<div class="col-md-12">
+		<button type="submit" class="btn btn-default closeProject" href="#">Close</button>
+		<h1>{{projectName}}</h1> 
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-tabs">
+					<li class="{{ activeIfTemplateIs 'ProjectBacklog' }}">
+						<a href="{{pathFor 'project.backlog'}}">Backlog</a>
+					</li>
+					<li class="{{ activeIfTemplateIs 'ProjectImpactMap' }}">
+						<a href="{{pathFor 'project.impactMap'}}">Impact Map</a>
+					</li>
+					<li class="{{ activeIfTemplateIs 'ProjectUserStoryMap' }}">
+						<a href="{{pathFor 'project.userStoryMap'}}">User Story Map</a>
+					</li>
+					<li class="{{ activeIfTemplateIs 'ProjectProjectSettings' }}">
+						<a href="{{pathFor 'project.projectSettings'}}">Settings</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<h2>Backlog</h2>
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">Under construction</h3>
+					</div>
+					<div class="panel-body">This is where you will find your projects backlog, consisting of User Stories created and prioritized from your Impact Map and User Story Map
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

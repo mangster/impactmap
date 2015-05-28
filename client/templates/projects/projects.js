@@ -12,7 +12,7 @@ Template.projects.events({
     },
 	'click .openProject' : function(e, t) {
 		e.preventDefault();
-		Router.go("project.show", {_id: this._id});
+		Router.go("project.backlog", {_id: this._id});
 		return false;
     }
 });

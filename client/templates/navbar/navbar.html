@@ -1,37 +1,37 @@
 <template name="navbar">
-	<nav class="navbar navbar-default">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			  </button>
-			  {{> navBrand}}
-			</div>
+    <nav class="navbar navbar-default">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container-fluid maincontainer">      
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      {{> navBrand}}
+                    </div>
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			  <ul class="nav navbar-nav">
-				{{#if currentUser}}
-					{{> navItems}}
-				{{/if}}
-				
-			  </ul>
-			  
-			  <ul class="nav navbar-nav navbar-right">
-
-				{{> loginButtons}}
-
-			  </ul>
-			</div><!-- /.navbar-collapse -->
-	</nav>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav">
+                        {{#if currentUser}}
+                            {{> navItems}}
+                        {{/if}}
+                      </ul>
+                      <ul class="nav navbar-nav navbar-right">
+                        {{> loginButtons}}
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 </template>
 
 
 <template name="navBrand">
-	<a class="navbar-brand" href="{{ pathFor 'home' }}">Impact Map</a>
+	<a class="navbar-brand" href="{{ pathFor 'home' }}"> <span id="logo" class="glyphicon glyphicon-tags" aria-hidden="true"></span>Impact Map</a>
 </template>
 
 <template name='navItems'>

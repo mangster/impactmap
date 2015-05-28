@@ -1,4 +1,4 @@
-Template.project.events({
+Template.impactMap.events({
 	'submit #createWhoForm': function(e, t) {	
         e.preventDefault();
 		var projectId = this._id;
@@ -24,34 +24,30 @@ Template.project.events({
 		Whys.insert({impactMap: impactMapId, name: name, rank:1})
 		return false;
     },
-	'click .closeProject' : function(e, t) {
+    'click .closeProject' : function(e, t) {
 		e.preventDefault();
 		Router.go("projects");
 		return false;
     }
 });
 
-
-
-Template.project.helpers({
-	activeIfTemplateIs: function (template) {
+Template.impactMap.helpers({
+    activeIfTemplateIs: function (template) {
       var currentRoute = Router.current();
       return currentRoute &&
         template === currentRoute.lookupTemplate() ? 'active' : '';
     },
-	test: function(){
-		return this.name;
-	},
-	whos: function(){
+    whos: function(){
 		return Whos.find({project: this._id}, {sort: {priority: 1} });
 	},
 	whys: function(){
 		return Whys.find({impactMap: this._id}, {sort: {rank: 1} });
 	}
-})
+});
 
 
-Template.project.onRendered(function () {
+
+Template.impactMap.onRendered(function () {
 	var whoList = $('#whoList');
 	var whyList = $('#whyList');
 	whoList.sortable({
@@ -93,12 +89,3 @@ Template.project.onRendered(function () {
         $(this).find('.hoverToolBar').stop().fadeOut(100);
     });
 });
-
-/*
-$(document).ready(function(){
-    $("#whyList").on("mouseenter", "li", function(){						
-        $(this).find('.myhover').fadeIn(400);
-    }).on("mouseleave", "li", function(){	
-        $(this).find('.myhover').stop().fadeOut(100);
-    })	
-});*/
