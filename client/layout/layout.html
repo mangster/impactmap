@@ -1,0 +1,36 @@
+<template name="mainLayout">
+	<navigation>
+        {{> navbar }}
+    </navigation>
+    
+    <content>
+        {{#if currentUser}}
+                {{> yield}}
+        {{else}}
+                {{> home}}
+        {{/if}}
+    </content>
+</template>
+
+<template name="projectLayout">
+	<navigation>
+        {{> navbar }}
+    </navigation>
+        
+        <div class="container-fluid maincontainer">
+            <div class="row">
+                {{#if currentUser}}
+                     <projectnavigation>
+                        {{> projectnav}}
+                    </projectnavigation>
+                    <content>
+                        {{> yield}}    
+                    </content>
+                        
+                {{else}}
+                        {{> home}}
+                {{/if}}
+            </div>
+        </div>
+</template>
+

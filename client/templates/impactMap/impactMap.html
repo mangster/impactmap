@@ -1,79 +1,63 @@
 <template name="impactMap">
-	<div class="col-md-12">
-		<button type="submit" class="btn btn-default closeProject" href="#">Close</button>
-		<h1>{{projectName}}</h1> 
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="nav nav-tabs">
-					<li class="{{ activeIfTemplateIs 'ProjectBacklog' }}">
-						<a href="{{pathFor 'project.backlog'}}">Backlog</a>
-					</li>
-					<li class="{{ activeIfTemplateIs 'ProjectImpactMap' }}">
-						<a href="{{pathFor 'project.impactMap'}}">Impact Map</a>
-					</li>
-					<li class="{{ activeIfTemplateIs 'ProjectUserStoryMap' }}">
-						<a href="{{pathFor 'project.userStoryMap'}}">User Story Map</a>
-					</li>
-					<li class="{{ activeIfTemplateIs 'ProjectProjectSettings' }}">
-						<a href="{{pathFor 'project.projectSettings'}}">Settings</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-        <div class="row">
-            <div class="col-md-4 who-headline">
-                    <h1>WHO<small> are the users of the system?</small></h1>
-            </div>
-            <div class="col-md-4">
-                <h1>WHAT<small> are the users goals?</small></h1>
-
-            </div>
-            <div class="col-md-4">
-                <h1>HOW<small> do we fulfill those goals?</small></h1>
-            </div>
-        </div>
+    {{>projectnav}}
+    <div class="container-fluid maincontainer">
         <div class="row">
             <div class="col-md-12">
-                <ul id="wholist" class="list-unstyled">
-                    {{#each whos}}
-                        {{>who}}
-                    {{/each}}
-                    <div class="row">
-                        <div class="col-md-4">
-                            <li>
-                                <button type="submit" class="btn panel btn-black" data-toggle="modal" data-target="#createWho{{_id}}Modal"><span class="glyphicon glyphicon-plus"></span> New WHO</button>
-                            </li>
-                        </div>
+                <div class="row">
+                    <div class="col-md-4 who-headline">
+                            <h1>WHO<small> are the users of the system?</small></h1>
                     </div>
+                    <div class="col-md-4">
+                        <h1>WHAT<small> are the users goals?</small></h1>
 
-
-                </ul>
-            </div>
-        </div>	
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Why</h2>
-                <ul id="whyList">
-                {{#each whys}}
-                        {{>why}}
-                {{/each}}
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h4>Create new Why</h4>
-                <form class="form-inline" id="createWhy">
-                    <div class="form-group">
-                        <label class="sr-only" for="whyName">Why Name</label>
-                        <input type="text" class="form-control" id="whyName" placeholder="Why name">
                     </div>
-                    <button type="submit" class="btn btn-primary">Create</button>
-                </form>
+                    <div class="col-md-4">
+                        <h1>HOW<small> do we fulfill those goals?</small></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="wholist" class="list-unstyled">
+                            {{#each whos}}
+                                {{>who}}
+                            {{/each}}
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <li>
+                                        <button type="submit" class="btn panel btn-black" data-toggle="modal" data-target="#createWho{{_id}}Modal"><span class="glyphicon glyphicon-plus"></span> New WHO</button>
+                                    </li>
+                                </div>
+                            </div>
+
+
+                        </ul>
+                    </div>
+                </div>	
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Why</h2>
+                        <ul id="whyList">
+                        {{#each whys}}
+                                {{>why}}
+                        {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Create new Why</h4>
+                        <form class="form-inline" id="createWhy">
+                            <div class="form-group">
+                                <label class="sr-only" for="whyName">Why Name</label>
+                                <input type="text" class="form-control" id="whyName" placeholder="Why name">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-	</div>
-    
+    </div>
     <!-- Modal -->
 		<div id="newWho" class="modal fade" role="dialog">
 		  <div class="modal-dialog">

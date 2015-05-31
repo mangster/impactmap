@@ -5,6 +5,36 @@ body {
 .maincontainer{
     max-width: 1500px;
 }
+
+.projectnavbackround {
+    background-color: #8BC34A;
+}
+
+.projectnavcontainer{
+    padding-top: 15px;
+}
+
+
+.nav-tabs>li>a {
+  background-color: #8BC34A; 
+  border-color: #8BC34A;
+  color:#ffffff;
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+  color: #20202f;
+  background-color: #ffffff;
+
+}
+
+.nav-tabs>li>a:hover {
+  color: #20202f;
+  background-color: #ffffff;
+}
+
+
 h1 {
    font-family: 'Poiret One', cursive;
 }
@@ -31,6 +61,9 @@ p {
     padding-top: 12px;
     border-color: #20202f;
 	font-size: 1em;
+    margin-bottom: 0px;
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
 }
 /* title */
 .navbar-default .navbar-brand {

@@ -1,24 +1,10 @@
 <template name="userStoryMap">
-	<div class="col-md-12">
-		<button type="submit" class="btn btn-default closeProject" href="#">Close</button>
-		<h1>{{projectName}}</h1> 
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="nav nav-tabs">
-					<li class="{{ activeIfTemplateIs 'ProjectBacklog' }}">
-						<a href="{{pathFor 'project.backlog'}}">Backlog</a>
-					</li>
-					<li class="{{ activeIfTemplateIs 'ProjectImpactMap' }}">
-						<a href="{{pathFor 'project.impactMap'}}">Impact Map</a>
-					</li>
-					<li class="{{ activeIfTemplateIs 'ProjectUserStoryMap' }}">
-						<a href="{{pathFor 'project.userStoryMap'}}">User Story Map</a>
-					</li>
-					<li class="{{ activeIfTemplateIs 'ProjectProjectSettings' }}">
-						<a href="{{pathFor 'project.projectSettings'}}">Settings</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+    {{>projectnav}}
+    <div class="container-fluid maincontainer">
+        <div class="row">
+            <div class="col-md-12">
+                <p>User Story mapping happens here</p>
+            </div>
+        </div>
+    </div>
 </template>

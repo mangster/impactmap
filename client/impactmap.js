@@ -1,7 +1,7 @@
 // Router configuration
 
 Router.configure({
-   layoutTemplate: 'main'
+   layoutTemplate: 'mainLayout'
  });
 
 Router.map(function () {
@@ -16,17 +16,6 @@ Router.map(function () {
 	this.route('projectSettings');
 });
 
-/*
-Router.route('/project/:_id', function () {
-	this.render('project', {
-		data: function () {
-		  return Projects.findOne({_id: this.params._id});
-		}
-	});
-}, {
-	name: 'project.show'
-});
-*/
 
 Router.route('/project/:_id', function () {
 	this.render('project', {
@@ -39,17 +28,25 @@ Router.route('/project/:_id', function () {
 });
 
 Router.route('/project/:_id/backlog', function () {
-	this.render('backlog', {
+	//this.layout("projectLayout");
+    this.render('backlog', {
 		data: function () {
 		  return Projects.findOne({_id: this.params._id});
 		}
 	});
-}, {
-	name: 'project.backlog'
+    this.render("projectnav", {
+        to: "projectnavigation",
+        data: function () {
+		  return Projects.findOne({_id: this.params._id});
+		}
+    });
+    }, {
+        name: 'project.backlog'
 });
 
 Router.route('/project/:_id/impactMap', function () {
-	this.render('impactMap', {
+	//this.layout("projectLayout");
+    this.render('impactMap', {
 		data: function () {
 		  return Projects.findOne({_id: this.params._id});
 		}
@@ -59,7 +56,8 @@ Router.route('/project/:_id/impactMap', function () {
 });
 
 Router.route('/project/:_id/userStoryMap', function () {
-	this.render('userStoryMap', {
+	//this.layout("projectLayout");
+    this.render('userStoryMap', {
 		data: function () {
 		  return Projects.findOne({_id: this.params._id});
 		}
@@ -69,7 +67,8 @@ Router.route('/project/:_id/userStoryMap', function () {
 });
 
 Router.route('/project/:_id/projectSettings', function () {
-	this.render('projectSettings', {
+	//this.layout("projectLayout");
+    this.render('projectSettings', {
 		data: function () {
 		  return Projects.findOne({_id: this.params._id});
 		}
