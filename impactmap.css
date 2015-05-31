@@ -333,14 +333,14 @@ body {
 }
 
 .panel-how{
-	
+	position: relative;
 	color: #ffffff;
 }
 
 .how-icon{
 	text-align: center;
 	margin-top: 12px;
-	font-size: 4em;
+	font-size: 3em;
 }
 
 .deleteHow {
