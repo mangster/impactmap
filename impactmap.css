@@ -235,7 +235,10 @@ body {
 	background-color: #CCAA4C;
 }
 
-
+.panel-project{
+	position: relative;
+	color: #ffffff;
+}
 
 .panel-who{
 
