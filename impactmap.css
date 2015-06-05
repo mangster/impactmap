@@ -338,25 +338,26 @@ body {
 .panel-how{
 	position: relative;
 	color: #ffffff;
+    cursor: pointer;
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
 }
 
 .how-icon{
-	text-align: center;
-	margin-top: 12px;
-	font-size: 3em;
+	font-size: 2em;
+    float: left;
+    width: 10%;
 }
 
-.deleteHow {
-	color: #ffffff;
-	font-size: 2em;
-	
+.how-title{
+	font-size: 1.5em;
+    float: right;
+    width: 90%;
 }
 
-.editHow {
-	color: #ffffff;
-	font-size: 2em;
-	margin-top: 4px;
-}	
+
+
+
 
 
 #whyList {

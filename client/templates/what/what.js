@@ -35,19 +35,32 @@ Template.what.helpers({
 
 
 Template.what.onRendered(function () {
+    $( "#sortable" + this.data._id ).sortable();
+    $( "#sortable" + this.data._id ).disableSelection();
+    
 	var howList = $('#howList'+ this.data._id);
 	howList.sortable({
             // Only make the .panel-heading child elements support dragging.
             // Omit this to make then entire <li>...</li> draggable.
-            handle: '.panel-heading-how', 
+            handle: ".panel-how", 
 			
-            update: function() {
-                $('.panel', howList).each(function(index, elem) {
-					 var $listItem = $(elem),
-                     newIndex = $listItem.index();
-                     // Persist the new indices.
-					 Hows.update({_id: this.id}, {$set: {rank: index+1}});
+            update: function(event, ui) {
+                var newHowPriority = 0;
+                howList.children().each(function(i) {
+                    var li = $(this);
+                    if (li.attr("class") == "how"){
+                        console.log(li.attr("id"));
+                        Hows.update({_id: li.attr("id")}, {$set: {priority: newHowPriority}});
+                        newHowPriority += 1;
+                    }
+                    
+                    //TODO if li är en panel, sätt rank till x, och plussa på x med 1
+                    //stringDiv += " "+li.attr("id") + '=' + i + '&';
                 });
+                //console.log(stringDiv);
             }
+        
 	});
+    howList.disableSelection();
+    
 });

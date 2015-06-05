@@ -1,7 +1,15 @@
 Template.how.events({
 	'click .deleteHow' : function(e, t) {
-		e.preventDefault();
+		e.preventDefault();  
+        $("#updateHow" +this._id +"Modal").modal('hide');
+        $('body').removeClass('modal-open');
+        $('.modal-backdrop').remove();
 		Hows.remove(this._id);
+		return false;
+    },
+    'click .panel-how' : function(e, t) {
+		e.preventDefault();
+        $("#updateHow" +this._id +"Modal").modal("show");
 		return false;
     },
 	'submit #updateHowForm': function(e, t) {	
