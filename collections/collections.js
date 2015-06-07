@@ -64,7 +64,7 @@ Hows.attachSchema(new SimpleSchema({
 	},
 		what: {
 		type: String,
-		label: "WHO",
+		label: "WHAT",
 	}
 }));
 

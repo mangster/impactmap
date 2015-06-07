@@ -26,7 +26,7 @@ Template.what.events({
 
 Template.what.helpers({
 	hows: function(){
-		return Hows.find({what: this._id}, {sort: {rank: 1} });
+		return Hows.find({what: this._id}, {sort: {priority: 1} });
 	},
 	color: function(){
 		return Whos.findOne(this.who).color;
@@ -43,21 +43,50 @@ Template.what.onRendered(function () {
             // Only make the .panel-heading child elements support dragging.
             // Omit this to make then entire <li>...</li> draggable.
             handle: ".panel-how", 
-			
+			connectWith: ".sortableHowList",
             update: function(event, ui) {
                 var newHowPriority = 0;
+                
+                
+                
+                //console.log("Moved Item : " + ui.item[0]);
+                //console.log("Sender: " + ui.sender);
+                //console.log("Target: " + this);
+                
+                // If moved between lists
+                if (ui.sender) {
+                    var movedWhoID = ui.item[0].id;
+                    var targetWhatID = this.getAttribute("data-id");
+                    console.log("ID of moved item: " + movedWhoID);
+                    console.log("ID of target list: " + targetWhatID);
+                    Hows.update({_id: movedWhoID}, {$set: {what: targetWhatID}});
+                }
+                /*
+
+                //See if we've moved between lists
+                if (ui.sender){
+                    var  newHowPriority2 = 0;
+                    var senderList = ui.sender[0];
+                    var targetListId = this.id;
+                    var targetList = $('#howList'+ targetListId);
+                    console.log(targetList);
+                    console.log(howList);
+                    targetList.children().each(function(i) {
+                        var li = $(this);
+                        if (li.attr("class") == "how"){
+                            Hows.update({_id: li.attr("id")}, {$set: {priority: newHowPriority2}});
+                            newHowPriority2 += 1;
+                        }
+                    });
+                }*/
+                
                 howList.children().each(function(i) {
                     var li = $(this);
                     if (li.attr("class") == "how"){
-                        console.log(li.attr("id"));
                         Hows.update({_id: li.attr("id")}, {$set: {priority: newHowPriority}});
                         newHowPriority += 1;
                     }
-                    
-                    //TODO if li är en panel, sätt rank till x, och plussa på x med 1
-                    //stringDiv += " "+li.attr("id") + '=' + i + '&';
                 });
-                //console.log(stringDiv);
             }
         
 	});
