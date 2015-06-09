@@ -1,6 +1,23 @@
 <template name="impactMap">
     {{>projectnav}}
     <div class="container-fluid maincontainer">
+         <div class="row">
+            <div class="col-md-4">
+                <div class="project-headline">
+                    <h1>{{projectName}}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-project">
+                    <div class="panel-body">
+                        <p>The description of the project will end up here shortly, I'm sure</p>
+                        <p>{{description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-4">
                 <h1>WHY<small> is this project being done?</small></h1>
@@ -24,35 +41,14 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-md-4 who-headline">
-                            <h1>WHO<small> are the users of the system?</small></h1>
+                    {{#each whos}}
+                        {{>who}}
+                    {{/each}}
+                    <div class="col-lg-6 col-md-12">  
+                        <button type="submit" class="btn panel btn-dashed" data-toggle="modal" data-target="#createWho{{_id}}Modal">+ create new WHO</button>
                     </div>
-                    <div class="col-md-4">
-                        <h1>WHAT<small> are the users goals?</small></h1>
 
-                    </div>
-                    <div class="col-md-4">
-                        <h1>HOW<small> do we fulfill those goals?</small></h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul id="wholist" class="list-unstyled">
-                            {{#each whos}}
-                                {{>who}}
-                            {{/each}}
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <li>
-                                        <button type="submit" class="btn panel btn-black" data-toggle="modal" data-target="#createWho{{_id}}Modal"><span class="glyphicon glyphicon-plus"></span> New WHO</button>
-                                    </li>
-                                </div>
-                            </div>
-
-
-                        </ul>
-                    </div>
-                </div>	
+                </div>	                
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Why</h2>
@@ -78,31 +74,6 @@
             </div>
         </div>
     </div>
-    <!-- Modal -->
-		<div id="newWho" class="modal fade" role="dialog">
-		  <div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-			  <div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Create new WHO</h4>
-			  </div>
-			  <div class="modal-body">
-				{{#autoForm collection="Whos" id="insertWhoForm" type="insert" doc=this setArrayItems=true}}
-				<fieldset>
-				  {{> afQuickField name='whoName'}}
-				  {{> afQuickField name='description' rows=6}}
-				</fieldset>
-				
-				<button type="submit" class="btn btn-primary">Insert</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				{{/autoForm}}
-			  </div>
-			</div>
-
-		  </div>
-		</div>
 
 	<!-- Create WHO modal -->
 		<div id="createWho{{_id}}Modal" class="modal fade" role="dialog">

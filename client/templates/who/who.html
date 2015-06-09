@@ -1,64 +1,60 @@
 <template name="who">
-	<div class="row">
-		<div class="col-md-4">
-			<li class="panel panel-who {{color}}">
-				<div class="row">
-					<div class="panel-body">
-						<div class="col-xs-2">
-							<div class="who-icon">
-                                <span class="glyphicon glyphicon-user"></span>
-							</div>
-						</div>
-						<div class="col-xs-10">
-							<h4>{{priority}} {{whoName}}</h4>
-							<p>{{description}}</p>	
-						</div>
-					</div>
-					
-				</div>
-				
-				<!-- Hover div containing the toolbar -->
-				<div class="hoverToolBar">
-					<div class="panel-body">
-						<div class="col-xs-11">
-						</div>
-						<div class="col-xs-1">
-							<a href="#">
-								<span class="glyphicon glyphicon-remove deleteWho"></span>
-							</a>
-							<a href="#">
-								<span class="glyphicon glyphicon-edit editWho" data-toggle="modal" data-target="#updateWho{{_id}}Modal"></span>
-							</a>
-							<!--
-							<a href="#">
-								<span class="glyphicon glyphicon-plus createWhat" data-toggle="modal" data-target="#createWhat{{_id}}Modal"></span>
-							</a>
-							-->
-							<!--<a href="#" class="who-tool">
-								<span class="glyphicon glyphicon-move moveWho"></span>
-							</a> -->
-							
-							
-						</div>
-					</div>
+    <div class="col-lg-4 col-md-12">   
+    <div class="whoContainer{{priorityColor}}">
+        
+        <div class="row">
+            <div class="col-xs-11">
+                <h2>WHO<small> are the users of the system?</small></h2>
+            </div>
+            <div class="col-xs-1">
+                <div class="whoNumber{{priorityColor}}">
+                    <span>{{priority}}</span>
                 </div>
-			</li>
-		</div>
-		<div class="col-md-8">
-			<ul class="list-unstyled">
+            </div>
+        </div>
+        <div class="row">        
+            <div class="col-md-4">
+                <div class="panel panel-who">
+                    <div class="panel-body">
+                        <p>{{whoName}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="panel panel-who">
+                    <div class="panel-body">
+                        {{description}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>WHAT<small> are the users goals?</small></h2>
+            </div>
+            <div class="col-md-6">
+                <h2>HOW<small> to achieve the user's goals?</small></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-unstyled">
 				{{#each whats}}
 					{{>what}}
 				{{/each}}
 				<div class="row">
 					<div class="col-md-6">
 						<li>
-							<button type="submit" class="btn panel btn-black" data-toggle="modal" data-target="#createWhat{{_id}}Modal"><span class="glyphicon glyphicon-plus"></span> New WHAT</button>
+                            <a href="#" class="newWhat" data-toggle="modal" data-target="#createWhat{{_id}}Modal">+ create New What</a>
 						</li>
 					</div>
 				</div>
 			</ul>
-		</div>
-	</div>
+            </div>
+        </div>
+</div>
+    </div>
 	
 	<!-- Update WHO modal -->
 		<div id="updateWho{{_id}}Modal" class="modal fade" role="dialog">

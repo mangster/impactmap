@@ -10,13 +10,18 @@ Template.who.events({
 		$("#updateWho" +this._id +"Modal").modal('hide');
 		return false;
     },
+    'click .panel-who' : function(e, t) {
+		e.preventDefault();
+        $("#updateWho" +this._id +"Modal").modal("show");
+		return false;
+    },
 	'submit #createWhatForm': function(e, t) {	
         e.preventDefault();
         var newWhatName = document.getElementById("createWhatName" + this._id).value;
 		var newWhatPriority = document.getElementById("createWhatPriority" + this._id).value;
 		var whoId = this._id;
-		var whoColor = this.color;
-		Whats.insert({who: whoId, whatName: newWhatName, priority: newWhatPriority, color: whoColor})
+		var newWhatID = Whats.insert({who: whoId, whatName: newWhatName, priority: newWhatPriority});
+        Hows.insert({howName: "Is able to ", priority: 1, what: newWhatID});
 		$("#createWhat" +this._id +"Modal").modal('hide');
 		return false;
     },
@@ -42,7 +47,15 @@ Template.who.helpers({
 	currentWho: function(){
 		console.log(Whos.findOne({_id: this._id}));
 		return Whos.findOne({_id: this._id});
-	}
+	},
+    priorityColor: function(){
+        if (this.priority > 0 && this.priority < 7){
+            return this.priority;
+        }
+        else {
+            return 0;   
+        }
+    }
 });
 
 Template.who.onRendered(function () {

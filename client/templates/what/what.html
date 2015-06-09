@@ -1,18 +1,11 @@
 <template name="what">
-	<div class="row">
+	<div class="row whatRow">
 		<div class="col-md-6">
 			<li class="panel panel-what {{color}}">
 				<div class="row">
 					<div class="panel-body">
-						<div class="col-xs-2">
-							<div class="what-icon">
-							<span class="glyphicon glyphicon-heart-empty"></span>
-							</div>
-						</div>
-						<div class="col-xs-10">
-							<h4>{{priority}} {{whatName}} {{name}}</h4>
-							<p>Bacon ipsum dolor amet cow kielbasa bresaola, capicol
-							</p>
+						<div class="col-xs-12">
+							{{whatName}}
 						</div>
 					</div>
 				</div>
@@ -45,7 +38,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<li>
-							<button type="submit" class="btn panel btn-black" data-toggle="modal" data-target="#createHow{{_id}}Modal"><span class="glyphicon glyphicon-plus"></span> New HOW</button>
+							<a href="#" class="newHow" data-toggle="modal" data-target="#createHow{{_id}}Modal">+ create New How</a>
 						</li>
 					</div>
 				</div>

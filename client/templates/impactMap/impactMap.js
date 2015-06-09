@@ -6,7 +6,9 @@ Template.impactMap.events({
 		var newDescription = document.getElementById("createWhoDescription" + this._id).value;
 		var newPriority = document.getElementById("createWhoPriority" + this._id).value;
 		var newWhoColor = document.getElementById("createWhoColor" + this._id).value;
-		Whos.insert({project: projectId, whoName: newWhoName, description: newDescription, priority: newPriority, color: newWhoColor})
+		var newWhoID = Whos.insert({project: projectId, whoName: newWhoName, description: newDescription, priority: newPriority, color: newWhoColor});
+        var newWhatID = Whats.insert({who: newWhoID, whatName: "Wants to ", priority: 1});
+        Hows.insert({howName: "Is able to ", priority: 1, what: newWhatID});
 		$("#createWho" +this._id +"Modal").modal('hide');
 		return false;
     },

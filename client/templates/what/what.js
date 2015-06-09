@@ -4,6 +4,11 @@ Template.what.events({
 		Whats.remove(this._id);
 		return false;
     },
+    'click .panel-what' : function(e, t) {
+		e.preventDefault();
+        $("#updateWhat" +this._id +"Modal").modal("show");
+		return false;
+    },
 	'submit #createHowForm': function(e, t) {	
         e.preventDefault();
         var newHowName = document.getElementById("createHowName" + this._id).value;
@@ -57,8 +62,6 @@ Template.what.onRendered(function () {
                 if (ui.sender) {
                     var movedWhoID = ui.item[0].id;
                     var targetWhatID = this.getAttribute("data-id");
-                    console.log("ID of moved item: " + movedWhoID);
-                    console.log("ID of target list: " + targetWhatID);
                     Hows.update({_id: movedWhoID}, {$set: {what: targetWhatID}});
                 }
                 /*

@@ -7,17 +7,20 @@ body {
 }
 
 .projectnavbackround {
-    background-color: #8BC34A;
+    background-color: #8B9639;
+   
 }
 
 .projectnavcontainer{
     padding-top: 15px;
 }
 
-
+.nav-tabs {
+ border-bottom: 0px;   
+}
 .nav-tabs>li>a {
-  background-color: #8BC34A; 
-  border-color: #8BC34A;
+  
+  
   color:#ffffff;
     border-radius: 0 !important;
     -moz-border-radius: 0 !important;
@@ -54,12 +57,11 @@ p {
 
 /* navbar */
 .navbar-default {
-	/*background-color: #8bc34a;*/
 	background-color: #20202f;
     border: 0px;
     padding-bottom: 12px;
     padding-top: 12px;
-    border-color: #20202f;
+    border-bottom: 1px solid #ffffff;
 	font-size: 1em;
     margin-bottom: 0px;
     border-radius: 0 !important;
@@ -67,7 +69,6 @@ p {
 }
 /* title */
 .navbar-default .navbar-brand {
-	/*background-color: #8bc34a;*/
     line-height: 1;
     color: #ffffff;
     padding: 0px;
@@ -80,7 +81,7 @@ p {
 }
 
 #logo {
-    color: #8bc34a;
+    color: #8B9639;
     font-size: 1.2em;
     margin-right: 12px;
     
@@ -89,7 +90,6 @@ p {
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
     color: #ffffff;
-	/*background-color: #8bc34a;*/
 }
 /* link */
 .navbar-default .navbar-nav > li > a {
@@ -193,95 +193,31 @@ body {
   height: 60px;
   background-color: #20202f;
 }
-.panel-impactmap {
-	border-radius: 0 !important;
-	background-color: #ffffff;
 
-	border-bottom: 1px solid #8bc34a;
-
-	color: #20202f;
-	font-size: 1em; 
+.project-headline {
+    border-bottom: 1px dashed #20202f;
+    margin-bottom: 18px;
+    
 }
 
-.panel-heading-impactmap {
-
-}
-
-
-.panel-heading-impactmap > h4{
-	font-size: 2em; 
-}
-.panel-body-impactmap {
-
-}
-
-.black {
-	background-color: #20202f;
-}
-
-.blue {
-	background-color: #2B2B99;
-}
-
-.green {
-	background-color: #8bc34a;
-}
-
-.purple {
-	background-color: #9F31B2;
-}
-
-.brown {
-	background-color: #CCAA4C;
+.project-headline h1 {
+    margin-bottom: 4px;
 }
 
 .panel-project{
+    border: 1px solid #20202f; 
+	color: #20202f;
 	position: relative;
-	color: #ffffff;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    min-height: 80px;
 }
 
-.panel-who{
 
-	color: #ffffff;
-	position: relative;
-}
 
-.who-icon{
-	text-align: center;
-	margin-top: 12px;
-	font-size: 4em;
 
-}
-
-.deleteWho {
-	color: #ffffff;
-	font-size: 2em;
-	
-}
-
-.editWho {
-	color: #ffffff;
-	font-size: 2em;
-	margin-top: 4px;
-	
-}
-
-.moveWho {
-	color: #ffffff;
-	font-size: 2em;
-	margin-top: 8px;
-}
-
-.createWhat {
-	color: #ffffff;
-	font-size: 2em;
-	margin-top: 4px;
-}
-
-.who-headline{
-	position: relative;
-
-}
 
 .btn-black {
 	background: #20202f;
@@ -292,7 +228,7 @@ body {
 
 .btn-black:hover {
 	color: #fff;
-	background: #8bc34a;
+	background: #8B9639;
 }
 
 .newWho{
@@ -302,11 +238,23 @@ body {
 	right: 55px;
 
 }
+.whatRow {
+    border-bottom: 1px dashed #8B9639; 
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+}
 
 .panel-what{
 	/* background-color: #20202f; */
-	color: #ffffff;
+	
+    
+    color: #20202f;
 	position: relative;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    min-height: 100px;
 }
 
 .what-icon{
@@ -329,19 +277,18 @@ body {
 	margin-top: 4px;
 }	
 
-.createHow {
-	color: #ffffff;
-	font-size: 2em;
-	margin-top: 4px;
+.newHow {
+    margin-bottom: 16px;
 }
 
 .panel-how{
+	 color: #20202f;
 	position: relative;
-	color: #ffffff;
+    background-color: #ffffff;
     cursor: pointer;
     border-radius: 0 !important;
     -moz-border-radius: 0 !important;
-    margin-bottom: 4px;
+    margin-bottom:  4px;
 }
 
 .how-icon{
