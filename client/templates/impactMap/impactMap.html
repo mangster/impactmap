@@ -2,17 +2,16 @@
     {{>projectnav}}
     <div class="container-fluid maincontainer">
          <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="project-headline">
                     <h1>{{projectName}}</h1>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="panel panel-project">
                     <div class="panel-body">
-                        <p>The description of the project will end up here shortly, I'm sure</p>
                         <p>{{description}}</p>
                     </div>
                 </div>
@@ -20,99 +19,134 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <h1>WHY<small> is this project being done?</small></h1>
-                <div class="panel panel-project black">
-				<div class="row">
-					<div class="panel-body">
-						<div class="col-xs-2">
-							<div class="who-icon">
-                                <span class="glyphicon glyphicon-user"></span>
-							</div>
-						</div>
-						<div class="col-xs-10">
-							<h1>{{projectName}}</h1>
-							<p>{{description}}</p>	
-						</div>
-					</div>
-				</div>
-			</div>
+                <h2>WHY<small> is this project being done?</small></h2>
             </div>
         </div>
+        <div class="row whyRow">
+            <ul class="list-unstyled">
+                 {{#each whys}}
+                    {{>why}}
+                {{/each}}
+            </ul>
+            <div class="col-lg-6 col-md-12">  
+                <button type="submit" class="btn panel btn-dashed" data-toggle="modal" data-target="#createWhy{{_id}}Modal">+ create new WHY</button>
+            </div>  
+        </div>
+        
+        
         <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    {{#each whos}}
-                        {{>who}}
-                    {{/each}}
-                    <div class="col-lg-6 col-md-12">  
-                        <button type="submit" class="btn panel btn-dashed" data-toggle="modal" data-target="#createWho{{_id}}Modal">+ create new WHO</button>
-                    </div>
-
-                </div>	                
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>Why</h2>
-                        <ul id="whyList">
-                        {{#each whys}}
-                                {{>why}}
-                        {{/each}}
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>Create new Why</h4>
-                        <form class="form-inline" id="createWhy">
-                            <div class="form-group">
-                                <label class="sr-only" for="whyName">Why Name</label>
-                                <input type="text" class="form-control" id="whyName" placeholder="Why name">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Create</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            {{#each whos}}
+                {{>who}}
+            {{/each}}
+            <div class="col-lg-6 col-md-12">  
+                <button type="submit" class="btn panel btn-dashed" data-toggle="modal" data-target="#createWho{{_id}}Modal">+ create new WHO</button>
+            </div>     
         </div>
     </div>
 
 	<!-- Create WHO modal -->
-		<div id="createWho{{_id}}Modal" class="modal fade" role="dialog">
+    <div id="createWho{{_id}}Modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create new WHO</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" id="createWhoForm">
+                        <div class="form-group">
+                            <label for="createWhoName{{_id}}">Name</label>
+                            <input type="text" class="form-control" id="createWhoName{{_id}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="createWhoPriority{{_id}}">Priority</label>
+                            <input type="number" class="form-control" id="createWhoPriority{{_id}}" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="createWhoDescription{{_id}}">Description</label>
+                            <textarea class="form-control" rows="3" id="createWhoDescription{{_id}}"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="createWhoColor{{_id}}">Color</label>
+                            <select class="form-control" id="createWhoColor{{_id}}">
+                                <option value="black" selected="selected">black</option>
+                                <option value="blue">blue</option>
+                                <option value="green">green</option>
+                                <option value="purple">purple</option>
+                                <option value="brown">brown</option>
+                            </select>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+	<!-- Create WHY modal -->
+    <div id="createWhy{{_id}}Modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create new WHY</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" id="createWhyForm">
+                        <div class="form-group">
+                            <label for="createWhyName{{_id}}">Name</label>
+                            <input type="text" class="form-control" id="createWhyName{{_id}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="createWhyPriority{{_id}}">Priority</label>
+                            <input type="number" class="form-control" id="createWhyPriority{{_id}}" value="1">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    
+		<!-- Update project modal -->
+		<div id="updateProject{{_id}}Modal" class="modal fade" role="dialog">
 		  <div class="modal-dialog">
 
 			<!-- Modal content-->
 			<div class="modal-content">
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Create new WHO</h4>
+				<h4 class="modal-title">Edit {{projectName}}</h4>
 			  </div>
 			  <div class="modal-body">
-				<form role="form" id="createWhoForm">
+				<form role="form" id="updateProjectForm">
 					<div class="form-group">
-						<label for="createWhoName{{_id}}">Name</label>
-						<input type="text" class="form-control" id="createWhoName{{_id}}">
+						<label for="updateProjectName{{_id}}">Name</label>
+						<input type="text" class="form-control" id="updateProjectName{{_id}}" value="{{projectName}}">
 					</div>
 					<div class="form-group">
-						<label for="createWhoPriority{{_id}}">Priority</label>
-						<input type="number" class="form-control" id="createWhoPriority{{_id}}" value="1">
-					</div>
-					<div class="form-group">
-						<label for="createWhoDescription{{_id}}">Description</label>
-						<textarea class="form-control" rows="3" id="createWhoDescription{{_id}}"></textarea>
-					</div>
-					
-					<div class="form-group">
-						<label for="createWhoColor{{_id}}">Color</label>
-						<select class="form-control" id="createWhoColor{{_id}}">
-							<option value="black" selected="selected">black</option>
-							<option value="blue">blue</option>
-							<option value="green">green</option>
-							<option value="purple">purple</option>
-							<option value="brown">brown</option>
-						</select>
+						<label for="updateProjectDescription{{_id}}">Description</label>
+						<input type="text" class="form-control" id="updateProjectDescription{{_id}}" value="{{description}}">
 					</div>
 				
 				<div class="modal-footer">
-					<button type="submit" class="btn btn-primary">Create</button>
+					<button type="submit" class="btn btn-primary">Save</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 				</div>
 				</form>
@@ -121,5 +155,5 @@
 			</div>
 
 		  </div>
-		</div>
+		</div>      
 </template>

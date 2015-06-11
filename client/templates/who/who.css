@@ -191,7 +191,6 @@
 
 
 .panel-who{
-
 	color: #20202f;
 	position: relative;
     background-color: #ffffff;
@@ -202,10 +201,3 @@
 }
 
 
-
-.btn-dashed {
-	background: #ffffff;
-	background-image: none;
-	border: 1px dashed #337ab7;
-	color: #337ab7;
-}

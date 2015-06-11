@@ -1,6 +1,27 @@
 // Post model
 Projects = new Meteor.Collection("projects");
 
+Projects.attachSchema(new SimpleSchema({
+		projectName: {
+		type: String,
+		label: "Name",
+        index: true,
+        unique: true,
+		max: 200
+	},
+        owner: {
+		type: String,
+		label: "Name",
+		max: 200
+	},
+		description: {
+		type: String,
+		label: "Description",
+		optional: true,
+		max: 1000
+	}
+}));
+
 Whos = new Meteor.Collection("whos");
 
 Whos.attachSchema(new SimpleSchema({
@@ -31,6 +52,22 @@ Whos.attachSchema(new SimpleSchema({
 }));
 
 Whys = new Meteor.Collection("whys");
+
+Whys.attachSchema(new SimpleSchema({
+		whyName: {
+		type: String,
+		label: "Name",
+		max: 200
+	},
+		priority: {
+		type: Number,
+		label: "Priority",
+	},
+	project: {
+		type: String,
+		label: "Project",
+	}
+}));
 
 Whats = new Meteor.Collection("whats");
 

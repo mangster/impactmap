@@ -1,0 +1,38 @@
+.panel-why{
+    border: 1px solid #20202f; 
+	color: #20202f;
+	position: relative;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+
+    
+}
+
+.panel-why .panel-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+
+.why-number {
+    background-color: #919396;
+    color: #ffffff;
+    font-size: 2.5em;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+
+
+}
+
+.why-name {
+    background-color: #ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.whyRow {
+    margin-bottom: 30px;   
+}

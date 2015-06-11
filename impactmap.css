@@ -217,7 +217,12 @@ body {
 
 
 
-
+.btn-dashed {
+	background: #ffffff;
+	background-image: none;
+	border: 1px dashed #337ab7;
+	color: #337ab7;
+}
 
 .btn-black {
 	background: #20202f;
@@ -306,90 +311,3 @@ body {
 
 
 
-
-
-#whyList {
-	list-style-type: none; 
-	margin: 0; 
-	padding: 0; 
-	
-}
-
-#whyList > li{
-	margin: 3px 3px 3px 0; 
-	padding: 1px; 
-	float: left; 
-	width: 20%; 
-	height: 90px; 
-	font-size: 1em; 
-	position: relative;
-	
-}
-
-#whyList .panel-heading {
-        cursor: move;
-}
-
-
-	
- 
- #whoList .panel-heading {
-        cursor: move;
-}
-	
-
- #whatList .panel-heading {
-	cursor: move;
-}
-
- #howList .panel-heading {
-        cursor: move;
-    }
-
-
-
-.tool {
-	opacity: 0.5;
-	color: #ff0000;
-	text-align: center; 
-	display: inline-block;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	margin-left: 1em;
-	margin-right: 1em;
-
-
-}
-
-.tool a:link{
-	color: #cccccc;
-	text-decoration: none;
-}
-.hoverToolBar a:visited{
-	color: #cccccc;
-	text-decoration: none;
-}
-.hoverToolBar a:hover{
-	color: #ffffff;
-	text-decoration: none;
-}
-.hoverToolBar a:active{
-	color: #cccccc;
-	text-decoration: none;
-}
-
-	
-
-.hoverToolBar{
-    background-color: none;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    display: none;
-	opacity: 1;
-
-}

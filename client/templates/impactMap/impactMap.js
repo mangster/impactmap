@@ -12,20 +12,29 @@ Template.impactMap.events({
 		$("#createWho" +this._id +"Modal").modal('hide');
 		return false;
     },
-	'submit #createWho': function(e, t) {	
+    'submit #updateProjectForm': function(e, t) {	
         e.preventDefault();
-        var name = document.getElementById("whoName").value;
-		var impactMapId = this._id;
-		Whos.insert({impactMap: impactMapId, whoName: name, rank:1})
+        var newProjectName = document.getElementById("updateProjectName" + this._id).value;
+		var newProjectDescription = document.getElementById("updateProjectDescription" + this._id).value;
+		Projects.update({_id: this._id}, {$set: {projectName: newProjectName, description: newProjectDescription}});
+		$("#updateProject" +this._id +"Modal").modal('hide');
 		return false;
     },
-	'submit #createWhy': function(e, t) {	
+    'submit #createWhyForm': function(e, t) {	
         e.preventDefault();
-        var name = document.getElementById("whyName").value;
-		var impactMapId = this._id;
-		Whys.insert({impactMap: impactMapId, name: name, rank:1})
+		var projectId = this._id;
+        var newWhyName = document.getElementById("createWhyName" + this._id).value;
+		var newWhyPriority = document.getElementById("createWhyPriority" + this._id).value;
+        Whys.insert({whyName: newWhyName, priority: newWhyPriority, project: projectId});
+		$("#createWhy" +this._id +"Modal").modal('hide');
 		return false;
     },
+    'click .panel-project' : function(e, t) {
+		e.preventDefault();
+        $("#updateProject" +this._id +"Modal").modal("show");
+		return false;
+    },
+
     'click .closeProject' : function(e, t) {
 		e.preventDefault();
 		Router.go("projects");
@@ -43,7 +52,7 @@ Template.impactMap.helpers({
 		return Whos.find({project: this._id}, {sort: {priority: 1} });
 	},
 	whys: function(){
-		return Whys.find({impactMap: this._id}, {sort: {rank: 1} });
+		return Whys.find({project: this._id}, {sort: {priority: 1} });
 	}
 });
 

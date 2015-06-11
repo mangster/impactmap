@@ -3,7 +3,20 @@ Template.why.events({
 		e.preventDefault();
 		Whys.remove(this._id);
 		return false;
-    }
+    },
+    'click .panel-why' : function(e, t) {
+		e.preventDefault();
+        $("#updateWhy" +this._id +"Modal").modal("show");
+		return false;
+    },
+    'submit #updateWhyForm': function(e, t) {	
+        e.preventDefault();
+        var newWhyName = document.getElementById("updateWhyName" + this._id).value;
+		var newWhyPriority = document.getElementById("updateWhyPriority" + this._id).value;
+		Whys.update({_id: this._id}, {$set: {whyName: newWhyName, priority: newWhyPriority}});
+		$("#updateWhy" +this._id +"Modal").modal('hide');
+		return false;
+    },
 });
 
 
