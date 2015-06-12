@@ -17,60 +17,60 @@ Router.map(function () {
 });
 
 
-Router.route('/project/:_id', function () {
+Router.route('/project/:projectName', function () {
 	this.render('project', {
 		data: function () {
-		  return Projects.findOne({_id: this.params._id});
+		  return Projects.findOne({projectName: this.params.projectName});
 		}
 	});
 }, {
 	name: 'project.show'
 });
 
-Router.route('/project/:_id/backlog', function () {
+Router.route('/project/:projectName/backlog', function () {
 	//this.layout("projectLayout");
     this.render('backlog', {
 		data: function () {
-		  return Projects.findOne({_id: this.params._id});
+		  return Projects.findOne({projectName: this.params.projectName});
 		}
 	});
     this.render("projectnav", {
         to: "projectnavigation",
         data: function () {
-		  return Projects.findOne({_id: this.params._id});
+		  return Projects.findOne({projectName: this.params.projectName});
 		}
     });
     }, {
         name: 'project.backlog'
 });
 
-Router.route('/project/:_id/impactMap', function () {
+Router.route('/project/:projectName/impactMap', function () {
 	//this.layout("projectLayout");
     this.render('impactMap', {
 		data: function () {
-		  return Projects.findOne({_id: this.params._id});
+		  return Projects.findOne({projectName: this.params.projectName});
 		}
 	});
 }, {
 	name: 'project.impactMap'
 });
 
-Router.route('/project/:_id/userStoryMap', function () {
+Router.route('/project/:projectName/userStoryMap', function () {
 	//this.layout("projectLayout");
     this.render('userStoryMap', {
 		data: function () {
-		  return Projects.findOne({_id: this.params._id});
+		  return Projects.findOne({projectName: this.params.projectName});
 		}
 	});
 }, {
 	name: 'project.userStoryMap'
 });
 
-Router.route('/project/:_id/projectSettings', function () {
+Router.route('/project/:projectName/projectSettings', function () {
 	//this.layout("projectLayout");
     this.render('projectSettings', {
 		data: function () {
-		  return Projects.findOne({_id: this.params._id});
+		  return Projects.findOne({projectName: this.params.projectName});
 		}
 	});
 }, {

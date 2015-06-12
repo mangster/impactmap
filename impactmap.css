@@ -93,8 +93,9 @@ p {
 }
 /* link */
 .navbar-default .navbar-nav > li > a {
-    padding: 0px;
+
     padding-top: 20px;
+
 	text-align: center;
     color: #ffffff;
 }

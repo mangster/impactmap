@@ -34,8 +34,51 @@
 </template>
 
 <template name='navItems'>
-		<li class="{{ activeIfTemplateIs 'projects' }}">
+		<!-- <li class="{{ activeIfTemplateIs 'projects' }}">
 			<a href="{{pathFor 'projects'}}">Projects</a>
-		</li>
+		</li> -->
+    <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{currentRoute}}<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="project-select">
+            {{#each projects}}
+               <li role="presentation"><a class="open-project" role="menuitem" tabindex="-1" href="#" id="projectName">{{projectName}}</a></li>
+            {{/each}}
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a data-toggle="modal" data-target="#createProjectModal" role="menuitem" tabindex="-1" href="#">+ create new project</a></li>
+            </ul>
+        </li>
+    
+	<!-- Create project modal -->
+    <div id="createProjectModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create new project</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" id="createProjectForm">
+                        <div class="form-group">
+                            <label for="createProjectName">Name</label>
+                            <input type="text" class="form-control" id="createProjectName">
+                        </div>
+                        <div class="form-group">
+                            <label for="createProjectDescription">Description</label>
+                            <textarea class="form-control" rows="3" id="createProjectDescription"></textarea>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
 </template>
 
