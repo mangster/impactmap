@@ -1,10 +1,10 @@
 // Post model
 Projects = new Meteor.Collection("projects");
 
-Projects.attachSchema(new SimpleSchema({
+projectsSchema = new SimpleSchema({
 		projectName: {
 		type: String,
-		label: "Name",
+		label: "Project name",
         index: true,
         unique: true,
 		max: 200
@@ -20,7 +20,15 @@ Projects.attachSchema(new SimpleSchema({
 		optional: true,
 		max: 1000
 	}
-}));
+});
+
+projectsSchema.messages({
+  notUnique: 'This project name is already taken, please try another',
+});
+
+Projects.attachSchema(projectsSchema);
+
+
 
 Whos = new Meteor.Collection("whos");
 
